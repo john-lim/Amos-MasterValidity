@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ClassLibrary1
+</name>
+</assembly>
+<members>
+<member name="M:ClassLibrary1.CProfile.LastDllErrorInfo(System.Int32)">
+	<summary>Gets information about error with specified number</summary>
+	<param name="ErrN">Number of error</param>
+	<returns>Description of error</returns>
+</member>
+</members>
+</doc>
