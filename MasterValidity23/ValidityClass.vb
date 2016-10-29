@@ -61,11 +61,13 @@ Namespace Gaskination
             Dim eRoot As Xml.XmlElement = doc.DocumentElement
             Dim CorrelationsTable As XmlElement 'Table of correlations.
             Dim SRWTable As XmlElement 'Table of Standardized Regression Weights
-            Dim Variances As XmlElement 'Table of Standardized Regression Weights
+            Dim Variances As XmlElement 'Table of Variances
+            Dim CovarianceTable As XmlElement 'Table of covariances
             'Selects the entire table node and stores it in a table object.
             SRWTable = eRoot.SelectSingleNode("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Standardized Regression Weights:']/table/tbody", nsmgr)
             CorrelationsTable = eRoot.SelectSingleNode("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody", nsmgr)
             Variances = eRoot.SelectSingleNode("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Variances:']/table/tbody", nsmgr)
+            CovarianceTable = eRoot.SelectSingleNode("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Covariances:']/table/tbody", nsmgr)
 
             'Exception handling for if the user tries to get CFA with a variable that only has one indicator.
             For j = 1 To iCount + 1
@@ -75,7 +77,9 @@ Namespace Gaskination
                     For k = 1 To iCount + 1
                         Try
                             If Not MatrixName(Variances, k, 3) = Nothing Then 'Checks if the variable is "unidentified"
-                                MsgBox(MatrixName(Variances, k, 0) + "  is missing an indicator, and is therefore, not latent. The CFA is only for latent variables, so don’t include " + MatrixName(Variances, k, 0) + " in the CFA.")
+                                MsgBox(MatrixName(Variances, k, 0) + " is causing an error. Either:
+1. It only has one indicator and is therefore, not latent. The CFA is only for latent variables, so don’t include " + MatrixName(Variances, k, 0) + " in the CFA.
+2. You are missing a constraint on an indicator.")
                                 Exit Function
                             End If
                         Catch exc As NullReferenceException
@@ -96,17 +100,19 @@ Namespace Gaskination
 
             'Arrays to hold values for each latent variable.
             Dim nameArray(iCount) As String
+            Dim SDarray(iCount) As Double
             Dim MSVarray(iCount) As Double
             Dim CRarray(iCount) As Double
             Dim AVEarray(iCount) As Double
             Dim MRarray(iCount) As Double
             Dim a As Integer = 0 'Variable to iterate through locations of the arrays.
 
-            'Compute MSV. Loops through all variables in the model.
+            'Compute SD &MSV. Loops through all variables in the model.
             For Each e As PDElement In pd.PDElements
                 'Finds the latent variables (ovals with more than one arrow).
                 If e.IsLatentVariable Then
                     Dim testVal As Double
+                    Dim testVal2 As Double
                     Dim MSV As Double
                     Dim i As Integer
                     For i = 1 To NumberOfRows
@@ -118,9 +124,13 @@ Namespace Gaskination
                                 MSV = testVal
                             End If
                         End If
+                        If e.NameOrCaption = MatrixName(Variances, i, 0) Then
+                            testVal2 = Math.Sqrt(MatrixElement(Variances, i, 3))
+                        End If
                     Next
                     MSVarray(a) = MSV 'Store the largest squared correlation to an array.
                     nameArray(a) = e.NameOrCaption
+                    SDarray(a) = testVal2
                     a += 1
                     MSV = 0
                 End If
@@ -185,9 +195,9 @@ Namespace Gaskination
             Dim resultWriter As New TextWriterTraceListener("MasterValidity.html")
             Trace.Listeners.Add(resultWriter)
 
-            'Write the beginning Of the document and the teable header
+            'Write the beginning Of the document and the table header
             debug.PrintX("<html><body><h1>Model Validity Measures</h1><hr/>")
-            debug.PrintX("<table><tr><th></th><th>CR</th><th>AVE</th>")
+            debug.PrintX("<table><tr><th></th><th>SD</th><th>CR</th><th>AVE</th>")
             If NumberOfRows > 0 Then
                 debug.PrintX("<th>MSV</th>")
             End If
@@ -222,12 +232,16 @@ Namespace Gaskination
             Dim bMalhotra As Boolean = True
             Dim iMalhotra As Integer = 0
             Dim sMessage As String = ""
+            Dim significance As String = ""
 
             'Make the table of validity measures while inspecting each element.
             For c = 0 To iCount - 1 'Unload the arrays holding each calculated measure.
                 debug.PrintX("<tr><td><span style='font-weight:bold;'>")
                 debug.PrintX(nameArray(c))
                 debug.PrintX("</span></td>")
+                debug.PrintX("<td>")
+                debug.PrintX(SDarray(c).ToString("#0.000"))
+                debug.PrintX("</td>")
                 If CRarray(c) < 0.7 Then 'Check if CR is low.
                     bMalhotra = False
                     debug.PrintX("<td style='color:red'>")
@@ -265,7 +279,7 @@ Namespace Gaskination
                 If AVEarray(c) < 0.5 Then 'Check if AVE is low.
                     debug.PrintX("<td style='color:red'>")
                     If bMalhotra = True Then 'If there is no problem with CR, the message won't reference Malhotra. Conversely, a reference to Malhotra.
-                        sMessage = "*"
+                        sMessage = "<sup>1 </sup>"
                         iMalhotra += 1 'Variable to show Malhotra reference later.
                     Else sMessage = ""
                     End If
@@ -323,9 +337,23 @@ Namespace Gaskination
                         End If
                     Next
 
+                    If MatrixName(CovarianceTable, z, 6) = "***" Then
+                        significance = "***"
+                    ElseIf MatrixElement(CovarianceTable, z, 6) < 0.1 Then
+                        significance = "&#8224;"
+                    ElseIf MatrixElement(CovarianceTable, z, 6) < 0.05 Then
+                        significance = "*"
+                    ElseIf MatrixElement(CovarianceTable, z, 6) < 0.01 Then
+                        significance = "**"
+                    Else
+                        significance = ""
+                    End If
+
+
+
                     'Print out the correlations for that variable.
                     debug.PrintX("<td>")
-                    debug.PrintX(MatrixElement(CorrelationsTable, z, 3).ToString("#0.000"))
+                    debug.PrintX(MatrixElement(CorrelationsTable, z, 3).ToString("#0.000") + significance)
                     debug.PrintX("</td>")
 
                     'A set of conditionals that formats the correlation matrix correctly.
@@ -411,11 +439,12 @@ Namespace Gaskination
 
 
             'Print references. Malhotra only prints if the described condition exists.
-            debug.PrintX("<h3>References</h3>Thresholds From:<br>Hu, L., Bentler, P.M. (1999), ""Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives"" SEM vol. 6(1), pp. 1-55.")
+            debug.PrintX("<h3>References</h3>Significance of Correlations:<br>&#8224; p < 0.100<br>* p < 0.050<br>** p < 0.010<br>*** p < 0.001<br>")
+            debug.PrintX("<br>Thresholds From:<br>Hu, L., Bentler, P.M. (1999), ""Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives"" SEM vol. 6(1), pp. 1-55.")
             If iMalhotra > 0 Then
-                debug.PrintX("<br>*Malhotra N. K., Dash S. argue that AVE is often too strict, and reliability can be established through CR alone.<br>Malhotra N. K., Dash S. (2011). Marketing Research an Applied Orientation. London: Pearson Publishing.")
+                debug.PrintX("<br><p><sup>1 </sup>Malhotra N. K., Dash S. argue that AVE is often too strict, and reliability can be established through CR alone.<br>Malhotra N. K., Dash S. (2011). Marketing Research an Applied Orientation. London: Pearson Publishing.")
             End If
-            debug.PrintX("<p>**If you would like to cite this tool directly, please use the following:")
+            debug.PrintX("<p><sup>2 </sup>If you would like to cite this tool directly, please use the following:")
             debug.PrintX("Gaskin, J. & Lim, J. (2016), ""Master Validity Tool"", AMOS Plugin. <a href=\""http://statwiki.kolobkreations.com"">Gaskination's StatWiki</a>.</p>")
 
             'Write Style And close
