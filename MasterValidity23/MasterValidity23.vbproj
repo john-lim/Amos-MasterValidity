@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A1837AC-6152-42F0-8AD9-4D660D79FC4F}</ProjectGuid>
+    <ProjectGuid>{EBFAE926-17F3-448C-BC77-89D1B778026C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MasterValidity23</RootNamespace>
     <AssemblyName>MasterValidity23</AssemblyName>
@@ -44,26 +44,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AmosDebug">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosDebug.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosDebug.dll</HintPath>
     </Reference>
     <Reference Include="AmosEngineLib">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosEngineLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosEngineLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AmosExtensions">
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosExtensions.dll</HintPath>
     </Reference>
     <Reference Include="AmosFileManager">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosFileManager.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosFileManager.dll</HintPath>
     </Reference>
     <Reference Include="AmosGraphics">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosGraphics.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\AmosGraphics.dll</HintPath>
     </Reference>
     <Reference Include="MiscAmosTypes">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\MiscAmosTypes.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\MiscAmosTypes.dll</HintPath>
     </Reference>
     <Reference Include="PBayes">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\PBayes.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\IBM\SPSS\Amos\23\PBayes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,7 +84,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ValidityClass.vb" />
+    <Compile Include="ValidityMaster.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
