@@ -89,6 +89,10 @@ Public Class ValidityMaster
         Dim aColumn(iLatent + 3) As String
         Dim aRow(iLatent - 1) As String
         Dim valueArray((aRow.Length - 1), (aColumn.Length - 1)) As Double 'Two dimensional array to hold all the values in the table.
+        If iCorrelations = 0 Then
+            ReDim valueArray(1, 3)
+            ReDim aColumn(2)
+        End If
         aColumn(columnIndex) = "CR"
         columnIndex += 1
         aColumn(columnIndex) = "AVE"
@@ -102,9 +106,11 @@ Public Class ValidityMaster
 
         For Each e As PDElement In pd.PDElements
             If e.IsLatentVariable And Not e.IsEndogenousVariable Then
-                aColumn(columnIndex) = e.NameOrCaption
                 aRow(rowIndex) = e.NameOrCaption
-                columnIndex += 1
+                If iCorrelations <> 0 Then
+                    aColumn(columnIndex) = e.NameOrCaption
+                    columnIndex += 1
+                End If
                 rowIndex += 1
             End If
         Next
@@ -171,58 +177,62 @@ Public Class ValidityMaster
             valueArray(rowIndex, columnIndex) = MR
             columnIndex += 1
 
-            For a = 1 To iCorrelations
-                If sRow = MatrixName(tableCorrelation, a, 2) Then
-                    columnIndex = -1
-                    rowIndex = -1
-                    sColumn = MatrixName(tableCorrelation, a, 0)
-                    dValue = MatrixElement(tableCorrelation, a, 3)
-                    For index = 0 To aColumn.Length - 1
-                        If aColumn(index) = sColumn Then
-                            columnIndex = index
+            If iCorrelations <> 0 Then
+
+                For a = 1 To iCorrelations
+                    If sRow = MatrixName(tableCorrelation, a, 2) Then
+                        columnIndex = -1
+                        rowIndex = -1
+                        sColumn = MatrixName(tableCorrelation, a, 0)
+                        dValue = MatrixElement(tableCorrelation, a, 3)
+                        For index = 0 To aColumn.Length - 1
+                            If aColumn(index) = sColumn Then
+                                columnIndex = index
+                            End If
+                        Next
+                        For index = 0 To aRow.Length - 1
+                            If aRow(index) = sRow Then
+                                rowIndex = index
+                            End If
+                        Next
+                        If columnIndex <> -1 And rowIndex <> -1 Then
+                            valueArray(rowIndex, columnIndex) = dValue
                         End If
-                    Next
-                    For index = 0 To aRow.Length - 1
-                        If aRow(index) = sRow Then
-                            rowIndex = index
-                        End If
-                    Next
-                    If columnIndex <> -1 And rowIndex <> -1 Then
-                        valueArray(rowIndex, columnIndex) = dValue
                     End If
-                End If
-            Next
+                Next
 
-            columnIndex = -1
-            rowIndex = -1
-            For index = 0 To aColumn.Length - 1
-                If sRow = aColumn(index) Then
-                    columnIndex = index
-                    rowIndex = index - 4
+                columnIndex = -1
+                rowIndex = -1
+                For index = 0 To aColumn.Length - 1
+                    If sRow = aColumn(index) Then
+                        columnIndex = index
+                        rowIndex = index - 4
+                    End If
+
+                Next
+                If columnIndex <> -1 And rowIndex <> -1 Then
+                    valueArray(rowIndex, columnIndex) = SQRT
                 End If
 
-            Next
-            If columnIndex <> -1 And rowIndex <> -1 Then
-                valueArray(rowIndex, columnIndex) = SQRT
             End If
 
             MSV = 0
-                CR = 0
-                AVE = 0
-                MR = 0
-                SSI = 0
-                SL2 = 0
-                SL3 = 0
-                MaxR = 0
-                sumErr = 0
-                numItems = 0
-            Next
+            CR = 0
+            AVE = 0
+            MR = 0
+            SSI = 0
+            SL2 = 0
+            SL3 = 0
+            MaxR = 0
+            sumErr = 0
+            numItems = 0
+        Next
 
 #End Region
 
 #Region "Create html"
-            'Remove the old table files
-            If (System.IO.File.Exists("MasterValidity.html")) Then
+        'Remove the old table files
+        If (System.IO.File.Exists("MasterValidity.html")) Then
             System.IO.File.Delete("MasterValidity.html")
         End If
 
@@ -244,6 +254,7 @@ Public Class ValidityMaster
         Dim iMalhotra As Integer = 0
         Dim sMessage As String = ""
         Dim significance As String = ""
+        Dim missingCorrelation As Boolean = True
 
         'Write the beginning Of the document and the table header
         debug.PrintX("<html><body><h1>Model Validity Measures</h1><hr/>")
@@ -373,6 +384,11 @@ Public Class ValidityMaster
                     Else
                         debug.PrintX(valueArray(y, x).ToString("#0.000") + significance + "</td>")
                     End If
+                ElseIf y + 4 > x Then
+                    debug.PrintX("&#8258</td>")
+                    missingCorrelation = False
+                Else
+                    debug.PrintX("</td>")
                 End If
             Next
             bMalhotra = True
@@ -381,6 +397,9 @@ Public Class ValidityMaster
         Next
 
         debug.PrintX("</table><hr/><h3>Validity Concerns</h3>") 'Next section displaying validity concerns.
+        If missingCorrelation = False Then
+            debug.PrintX("&#8258Correlation is not specified in the model.<br>")
+        End If
         Dim max As Integer = 0 'Variable to count the number of validity concerns.
         If msgDiscriminant.Count > max Then
             max = msgDiscriminant.Count
