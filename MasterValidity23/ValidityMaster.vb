@@ -255,6 +255,7 @@ Public Class ValidityMaster
         Dim sMessage As String = ""
         Dim significance As String = ""
         Dim missingCorrelation As Boolean = True
+        Dim bDiscriminant As Boolean = True
 
         'Write the beginning Of the document and the table header
         debug.PrintX("<html><body><h1>Model Validity Measures</h1><hr/>")
@@ -343,7 +344,7 @@ Public Class ValidityMaster
                                 red = True
                             End If
                         ElseIf aRow(y) = MatrixName(tableCorrelation, i, 2) Then 'If the correlation matches the variable we are checking.
-                            If (Math.Sqrt(valueArray(y, x)).ToString("#0.000")) < (MatrixElement(tableCorrelation, i, 3)) Then 'Check if the square root of AVE is less than the correlation.
+                            If (Math.Sqrt(valueArray(y, x))) < (MatrixElement(tableCorrelation, i, 3)) Then 'Check if the square root of AVE is less than the correlation.
                                 msgDiscriminant.Enqueue("Discriminant Validity: the square root of the AVE for " & aRow(y) & " is less than its correlation with " & MatrixName(tableCorrelation, i, 0) & ".") 'Message if any cases are found.
                                 red = True
                             End If
@@ -392,6 +393,7 @@ Public Class ValidityMaster
                 End If
             Next
             bMalhotra = True
+            red = False
             significance = ""
             debug.PrintX("</tr>")
         Next
