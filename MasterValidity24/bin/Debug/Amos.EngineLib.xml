@@ -1,0 +1,5273 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Amos.EngineLib
+</name>
+</assembly>
+<members>
+<member name="P:AmosEngineLib.AmosMatrix.NRows">
+ -----------------------------------------------------------------------------
+ <summary>
+ The number of rows a matrix has.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.NColumns">
+ -----------------------------------------------------------------------------
+ <summary>
+ The number of columns a matrix has.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.X(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The value of a matrix element.
+ </summary>
+ <param name="i"></param>
+ <param name="j"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.RowName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Name of the variable associated with a matrix row.
+ </summary>
+ <param name="i"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.ColumnName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Name of the variable associated with a matrix column.
+ </summary>
+ <param name="i"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.RowNumber(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Variable number (maintained internally by the Amos engine) of the variable associated with a matrix row.
+ </summary>
+ <param name="i"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosMatrix.ColumnNumber(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Variable number (maintained internally by the Amos engine) of the variable associated with a matrix column.
+ </summary>
+ <param name="i"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosMatrix.SetDimensions(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies how many rows and columns a matrix has. (Not necessary if you use GetMatrix to obtain a matrix that Amos has calculated.)
+ </summary>
+ <param name="rows"></param>
+ <param name="columns"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:AmosEngineLib.AmosEngine">
+ -----------------------------------------------------------------------------
+ <summary>
+ Performs calculations for structural equation modeling.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AnyMissingValues">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns True if any group has data with missing values.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitAllModels">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits all models.
+ </summary>
+ <returns>0 = no error</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TextOutput(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether results are displayed at the end of the analysis.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/11/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TextOutput">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays results at the end of the analysis.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/11/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitModel(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits a single model.
+ </summary>
+ <param name="modelNumber">A model number. The first model is model number 1.</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitModel(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits a single model.
+ </summary>
+ <param name="modelName">A model name</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitModel">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits the first modell.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Evaluate0(System.Int32@,System.Double@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.EvaluateEx0(System.Int32@,System.Double@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Evaluate1(System.Int32@,System.Double@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.EvaluateEx1(System.Int32@,System.Double@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Evaluate2a(System.Int32@,System.Double@,System.Double[]@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives. Evaluate2a evaluates approximate 2nd derivatives. EvaluateEx2a evaluates the inverse of the matrix of approximate 2nd derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <param name="h">Approximate 2nd derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.EvaluateEx2a(System.Int32@,System.Double@,System.Double[]@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives. Evaluate2a evaluates approximate 2nd derivatives. EvaluateEx2a evaluates the inverse of the matrix of approximate 2nd derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <param name="v">The inverse of the matrix of approximate 2nd derivatives.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Evaluate2e(System.Int32@,System.Double@,System.Double[]@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives. Evaluate2e evaluates 2nd derivatives. EvaluateEx2e evaluates the inverse of the matrix of 2nd derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <param name="h">The 2nd derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.EvaluateEx2e(System.Int32@,System.Double@,System.Double[]@,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Evaluates the discrepancy function and its 1st derivatives. Evaluate2e evaluates 2nd derivatives. EvaluateEx2e evaluates the inverse of the matrix of 2nd derivatives.
+ </summary>
+ <param name="ind">0 = no error</param>
+ <param name="f">The discrepancy function</param>
+ <param name="g">The first order derivatives</param>
+ <param name="v">The inverse of the matrix of 2nd derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimatesEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimatesEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrorsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrorsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBoundsEx(AmosEngineLib.AmosEngine.TMatrixID,AmosEngineLib.AmosMatrix)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="am"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimate(AmosEngineLib.AmosEngine.TMatrixID,System.Int32,System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets one element of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="row"></param>
+ <param name="column"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimate(AmosEngineLib.AmosEngine.TMatrixID,System.String,System.String,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets one element of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="rowVariableName"></param>
+ <param name="columnVariableName"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimate(AmosEngineLib.AmosEngine.TMatrixID,System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets one element of a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="row"></param>
+ <param name="column"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetEstimate(AmosEngineLib.AmosEngine.TMatrixID,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets one element of a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="rowVariableName"></param>
+ <param name="columnVariableName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrors(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrors(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrors(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetStandardErrors(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets bootstrap standard errors for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetPCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bootstrap confidence intervals for the elements of a matrix of estimates in group number 1, using the percentile method.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0">The matrix of lower bounds</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper bounds of the bias corrected bootstrap confidence intervals for the elements of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrixBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedBCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetBCUpperBounds method will be used later in the program.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedStandardErrors(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetStandardErrors method will be used later to obtain bootstrap standard errors for the elements of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedBCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetBCLowerBounds method will be used later in the program.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedPCLowerBounds(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetPCLowerBounds method will be used later in the program.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedEstimates(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetEstimates method will be used later to get a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedPCUpperBounds(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetPCUpperBounds method will be used later in the program.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfGroups">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of groups.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RowNumbers(AmosEngineLib.AmosEngine.TMatrixID,System.Int32[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable numbers associated with the rows of a matrix. (Variables are numbered starting with 1.)
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theVariableNumbers"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RowNumbers(AmosEngineLib.AmosEngine.TMatrixID,System.Int32[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable numbers associated with the rows of a matrix in group number 1. (Variables are numbered starting with 1.)
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theRowNumbers"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RowNames(AmosEngineLib.AmosEngine.TMatrixID,System.String[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable names associated with the rows of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theRowNames"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RowNames(AmosEngineLib.AmosEngine.TMatrixID,System.String[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable names associated with the rows of a matrix of estimates in group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theRowNames"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableName(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of an observed variable.
+ </summary>
+ <param name="variableNumber"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of an observed variable in group number 1.
+ </summary>
+ <param name="variableNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableLabel(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the label (not the name) of an observed variable.
+ </summary>
+ <param name="variableNumber"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableLabel(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the label (not the name) of an observed variable in group number 1.
+ </summary>
+ <param name="variableNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableIsNumeric(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a boolean value that indicates whether an observed variable is numeric.
+ </summary>
+ <param name="variableNumber"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableIsNumeric(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a boolean value that indicates whether an observed variable in group number 1 is numeric.
+ </summary>
+ <param name="variableNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableHasMissingValues(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a boolean value that indicates whether an observed variable has missing observations in a specified group.
+ </summary>
+ <param name="variableNumber"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputVariableHasMissingValues(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a boolean value that indicates whether an observed variable has missing observations in group number 1.
+ </summary>
+ <param name="variableNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ColumnNumbers(AmosEngineLib.AmosEngine.TMatrixID,System.Int32[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable numbers associated with the columns of a matrix. (Variables are numbered starting with 1.)
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theVariableNumbers"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ColumnNumbers(AmosEngineLib.AmosEngine.TMatrixID,System.Int32[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable numbers associated with the columns of a matrix in group number 1. (Variables are numbered starting with 1.)
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theVariableNumbers"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ColumnNames(AmosEngineLib.AmosEngine.TMatrixID,System.String[]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable names associated with the columns of a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theColumnNames">The column names</param>
+ <param name="groupNumber">A group number. The first group is group number 1.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ColumnNames(AmosEngineLib.AmosEngine.TMatrixID,System.String[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the variable names associated with the columns of a matrix of estimates, for group number 1
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theColumnNames">The column names</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfRows(AmosEngineLib.AmosEngine.TMatrixID,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of rows in a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfRows(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of rows in a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfColumns(AmosEngineLib.AmosEngine.TMatrixID,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of columns in a matrix of estimates.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfColumns(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of columns in a matrix of estimates for group number 1.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfParameters">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of model parameters, not taking into account any constraints specified with the Model method.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfVariables(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of variables.
+ </summary>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NumberOfVariables">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of variables in group number 1.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter's name.
+ </summary>
+ <param name="parameterNumber">A parameter number. Parameters are numbered beginning with 1.</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterValue(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter's value.
+ </summary>
+ <param name="parameterName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterValue(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter's value.
+ </summary>
+ <param name="parameterIndex"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterInfo(System.Int32,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets information about a parameter.
+ </summary>
+ <param name="parameterNumber">A parameter number. Parameters are numbered beginning with 1.</param>
+ <param name="groupNumber"></param>
+ <param name="parameterType"></param>
+ <param name="leftVariable"></param>
+ <param name="rightVariable"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutParameterValue(System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns a value to a parameter.
+ </summary>
+ <param name="parameterName"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutParameterValue(System.Int32,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns a value to a parameter.
+ </summary>
+ <param name="parameterIndex"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterVector(System.Double[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the values of all free parameters.
+ </summary>
+ <param name="x"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutParameterVector(System.Double[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to all free parameters.
+ </summary>
+ <param name="x"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetGroupName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of a group.
+ </summary>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetGroupName">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of group number 1.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/10/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.VariableName(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of a variable.
+ </summary>
+ <param name="variableNumber"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.VariableName(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of a variable in group number 1.
+ </summary>
+ <param name="variableNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NeedBootSampleEstimates(AmosEngineLib.AmosEngine.TMatrixID)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Declares that the GetBootSampleEstimates method will be used later to get a matrix of estimates from an individual bootstrap sample.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBootSampleEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates from an individual bootstrap sample.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrix"></param>
+ <param name="sampleNumber"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetBootSampleEstimates(AmosEngineLib.AmosEngine.TMatrixID,System.Double[0:,0:]@,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a matrix of estimates in group number 1 from an individual bootstrap sample.
+ </summary>
+ <param name="matrixID">Specifies a matrix of estimates</param>
+ <param name="theMatrix"></param>
+ <param name="sampleNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GroupName(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns a name to a group.
+ </summary>
+ <param name="theGroupName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Cov(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a covariance as a model parameter.
+ </summary>
+ <param name="leftVariableName">A variable name</param>
+ <param name="rightVariableName">A variable name</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Cov(System.String,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a covariance as a model parameter.
+ </summary>
+ <param name="leftVariableName">A variable name</param>
+ <param name="rightVariableName">A variable name</param>
+ <param name="parameterName">A parameter name</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Cov(System.String,System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a covariance as a model parameter.
+ </summary>
+ <param name="leftVariableName">A variable name</param>
+ <param name="rightVariableName">A variable name</param>
+ <param name="parameterValue">The parameter's value</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Var(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a variance as a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Var(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a variance as a model parameter and gives it a name.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Var(System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a variance as a model parameter and fixes its value to a constant.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Mean(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that a mean is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Mean(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that a mean is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Mean(System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that a mean is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Intercept(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that an intercept is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Intercept(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that an intercept is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Intercept(System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that an intercept is a model parameter.
+ </summary>
+ <param name="variableName"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Path(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a regression weight as a model parameter.
+ </summary>
+ <param name="leftVariableName"></param>
+ <param name="rightVariableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Path(System.String,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a regression weight as a model parameter and gives it a name.
+ </summary>
+ <param name="leftVariableName"></param>
+ <param name="rightVariableName"></param>
+ <param name="parametername"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Path(System.String,System.String,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a regression weight as a model parameter and fixes its value to a constant.
+ </summary>
+ <param name="leftVariableName"></param>
+ <param name="rightVariableName"></param>
+ <param name="parameterValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterNumber(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter's number, given its name. Parameters are numbered starting with 1.
+ </summary>
+ <param name="parameterName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.VariableNumber(System.String,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a variable number. (Variables are numbered starting with 1.)
+ </summary>
+ <param name="variableName"></param>
+ <param name="groupNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.VariableNumber(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a variable number in group number 1.
+ </summary>
+ <param name="variableName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Mods(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the modification indices described by Jöreskog and Sörbom (1984).
+ </summary>
+ <param name="threshold"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/10/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Mods">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays modification indices (Jöreskog and Sörbom, 1984) greater than 4.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PermuteDetail(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls the display of detailed information about the solution obtained for each permutation when the Permute method is used.
+ </summary>
+ <param name="TF">If true, displays detailed information.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PermuteDetail">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays detailed information about the solution obtained for each permutation when the Permute method is used.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootBS(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to perform the bootstrap procedure of Bollen and Stine (1992) for testing the hypothesis that the specified model is correct.
+ </summary>
+ <param name="TF">If true, performs the bootstrap procedure of Bollen and Stine (1992).</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootBS">
+ -----------------------------------------------------------------------------
+ <summary>
+ Performs the bootstrap procedure of Bollen and Stine (1992) for testing the hypothesis that the specified model is correct.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ConfidencePC(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Display bootstrap confidence intervals obtained by the percentile method (Efron, 1987).
+ </summary>
+ <param name="confidenceLevel">The confidence level</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Bootstrap(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests bootstrap standard errors and specifies the number of bootstrap samples.
+ </summary>
+ <param name="nSamples">The number of bootstrap samples</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ConfidenceBC(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Display bias-corrected bootstrap confidence intervals (Efron, 1987).
+ </summary>
+ <param name="confidenceLevel">The confidence level</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Uls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests an unweighted least squares solution, obtained by minimizing (D1) together with (D6) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Crit1(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Sets one of the convergence criteria used in deciding whether a local minimum has been reached.
+ </summary>
+ <param name="threshold"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Crit2(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Sets one of the convergence criteria used in deciding whether a local minimum has been reached.
+ </summary>
+ <param name="threshold"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Time(System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Sets an execution time limit.
+ </summary>
+ <param name="seconds"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.LineLength(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The LineLength method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="nCharacters"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.SignificantFigures(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The SignificantFigures method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="nDigits"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootFactor(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Speeds up the bootstrap algorithm and makes it more reliable under the assumption that standard errors are inversely proportional to the square root of sample size.
+ </summary>
+ <param name="m"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.VariableCount(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the number of variables in the model.
+ </summary>
+ <param name="nVariables"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.OVariableCount(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the number of observed variables in the model.
+ </summary>
+ <param name="nVariables"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.UVariableCount(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the number of unobserved variables in the model.
+ </summary>
+ <param name="nVariables"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Fisher(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Uses Fisher's scoring method in the case of maximum likelihood estimation (ml), or the Gauss-Newton method in the case of least squares estimation (Uls, Sls, Gls or Adf).
+ </summary>
+ <param name="Niterations">Use Fisher's scoring method or the Gauss-Newton method for this many iterations, then switch over to exact 2nd derivatives</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PageLength(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The PageLength method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="nLines"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ChiCorrect(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the value of the constant, r, in Appendix A.
+ </summary>
+ <param name="r">The value of the constant, r, in Appendix A</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Permute(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests a permutation test (Arbuckle, 1994b) of the specified model.
+ </summary>
+ <param name="x"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.MinDecimalPlaces(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The MinDecimalPlaces method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="nDigits"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.MaxDecimalPlaces(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The MaxDecimalPlaces method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="nDigits"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Gls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests a generalized least squares solution, obtained by minimizing (D1) together with (D3) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Sls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests the 'scale free' least squares solution obtained by minimizing (D1) together with (D5) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Ml">
+ -----------------------------------------------------------------------------
+ <summary>
+ Requests estimation by the method of maximum likelihood, minimizing (D1) together with (D2) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Shutdown">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Shutdown method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Adf">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies estimation by Browne's (1982) asymptotically distribution-free criterion,
+ minimizing (D1) together with (D4) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitMLMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits the sample covariance matrix that is the maximum likelihood estimate (rather than the unbiased estimate).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FitUnbiasedMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits the sample covariance matrix that is an unbiased estimate (rather than the maximum likelihood estimate).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootUls(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls display of the histogram of unweighted least squares discrepancies.
+ </summary>
+ <param name="TF">If true, displays the histogram.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootUls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the histogram of unweighted least squares discrepancies.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Seed(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a seed for the random number generator used for bootstrapping and for the permutation test.
+ </summary>
+ <param name="theSeed"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Iterations(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Limits the number of iterations.
+ </summary>
+ <param name="nIterations"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootSls(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls display of the histogram of scale-free least squares discrepancies.
+ </summary>
+ <param name="TF">If true, displays the histogram.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootSls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the histogram of scale-free least squares discrepancies.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootGls(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls display of the histogram of generalized least squares discrepancies.
+ </summary>
+ <param name="TF">If true, displays the histogram.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootGls">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the histogram of generalized least squares discrepancies.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootMl(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls display of the histogram of maximum likelihood discrepancies.
+ </summary>
+ <param name="TF">If true, displays the histogram.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootMl">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the histogram of maximum likelihood discrepancies.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootAdf(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls display of the histogram of ADF discrepancies.
+ </summary>
+ <param name="TF">If true, displays the histogram.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootAdf">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the histogram of ADF discrepancies.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Cmin">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the minimized value of the discrepancy function.
+ </summary>
+ <returns>The minimized value of the discrepancy function.</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterCovariance(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the covariance between two parameter estimates.
+     ''' </summary>
+ <param name="parameterName1"></param>
+ <param name="parameterName2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterCovariance(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the estimated variance (the square of the standard error) of a parameter estimate.
+ </summary>
+ <param name="parameterName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterCovariance(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the covariance between two parameter estimates.
+ </summary>
+ <param name="parameterIndex1"></param>
+ <param name="parameterIndex2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ParameterCovariance(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the estimated variance (the square of the standard error) of a parameter estimate.
+ </summary>
+ <param name="parameterIndex"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Admissible">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns true if parameter estimates are admissible for every group.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Stable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns true if the solution provides a stable linear system for every group.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.CouldntComputeImpliedCorrelation(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Since the previous call to this function,
+ has there been an attempt to compute an implied correlation that failed
+ because of a negative implied variance?
+ This function can be called at any time.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	6/29/2006	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.CouldntComputeAllImpliedCorrelation(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Since the previous call to this function,
+ has there been an attempt to compute an 'all implied' correlation that failed
+ because of a negative implied variance?
+ This function can be called at any time.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	6/29/2006	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.CouldntComputeStandardizedEffect(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Since the previous call to this function,
+ has there been an attempt to compute a standardized effect (direct, indirect or total)
+ that failed because of a negative implied variance?
+ This function can be called at any time.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	6/29/2006	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Df">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the degrees of freedom.
+ </summary>
+ <returns>The degrees of freedom</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.WasInverted">
+ -----------------------------------------------------------------------------
+ <summary>
+ True if the matrix of (approximate or exact) 2nd derivatives was successfully inverted.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ChiSquareProbability(System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the "p value" for a chi square statistic.
+ </summary>
+ <param name="chiSquare">A chi square statistic</param>
+ <param name="df">Degrees of freedom</param>
+ <returns>A "p values"</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.npar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of model parameters for the most recently fitted model.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.P">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the "p value" for testing the null hypothesis that the specified model is correct.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Ncp">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a point estimate of the noncentrality parameter.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NcpLo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower boundary of a 90% confidence interval for the noncentrality parameter.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NcpHi">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper boundary of a 90% confidence interval for the noncentrality parameter.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Rmsea">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a point estimate of the root mean square error of approximation.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RmseaLo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the lower boundary of a 90% confidence interval for the RMSEA.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.RmseaHi">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the upper boundary of a 90% confidence interval for the RMSEA.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Pclose">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the "p value" for testing the null hypothesis that RMSEA is less than .05 in the population (Browne and Cudeck, 1993).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.MonteCarlo(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether a parametric bootstrap or a nonparametric bootstrap (Efron and Tibshirani, 1993) is performed.
+ </summary>
+ <param name="TF">If true, performs a parametric bootstrap.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.MonteCarlo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Performs a parametric bootstrap (Efron and Tibshirani, 1993).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NormalityCheck(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls the reporting of statistics for assessing multivariate normality of the observed variables.
+ </summary>
+ <param name="TF">If true, reports the statistics.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NormalityCheck">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reports statistics for assessing multivariate normality of the observed variables.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TableOutput(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ TableOutput is deprecated in Amos 6. Use the TextOutput method instead.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TableOutput">
+ -----------------------------------------------------------------------------
+ <summary>
+ TableOutput is deprecated in Amos 6. Use the TextOutput method instead.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TableOutputNoView(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether results are written to a file (*.amp) that is used by Amos Graphics for displaying results on a path diagram.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TableOutputNoView">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether results are written to a file (*.amp) that is used by Amos Graphics for displaying results on a path diagram.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Specran(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos uses a special random number generator that is common to all versions of Amos.
+ </summary>
+ <param name="TF">If true, uses the special random number generator.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Specran">
+ -----------------------------------------------------------------------------
+ <summary>
+ Uses a special random number generator that is common to all versions of Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootVerify(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls the reporting of detailed information about individual bootstrap samples.
+ </summary>
+ <param name="TF">If true, reports the detailed information.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BootVerify">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reports detailed information about individual bootstrap samples.
+     ''' </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Smc(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display the squared multiple correlation between each endogenous variable and the variables (other than residual variables) that directly affect it.
+ </summary>
+ <param name="TF">If true, displays the squared multiple correlations.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Smc">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the squared multiple correlation between each endogenous variable and the variables (other than residual variables) that directly affect it.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AllImpliedMoments(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls reporting of implied means, variances and covariances of all variables in the model.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AllImpliedMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Do report implied means, variances and covariances of all variables in the model.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Emulisrel6(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls the choice of (D1a) or (D1) in Appendix B.
+ </summary>
+ <param name="TF">True means use (D1a). False means use ((D1)).</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Emulisrel6">
+ -----------------------------------------------------------------------------
+ <summary>
+  Use (D1a) in Appendix B.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Covest(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos displays an estimate of the covariance matrix of the parameter estimates.
+ </summary>
+ <param name="TF">If true, displays an estimate of the covariance matrix of the parameter estimates.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Covest">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays an estimate of the covariance matrix of the parameter estimates.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Corest(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos displays an estimate of the correlation matrix of the parameter estimates.
+ </summary>
+ <param name="TF">If true, displays an estimate of the correlation matrix of the parameter estimates.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Corest">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays an estimate of the correlation matrix of the parameter estimates.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Crdiff(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos displays a 'critical ratio' for each pair of parameter estimates. The critical ratio for a pair of parameter estimates provides a test of the hypothesis that the two parameters are equal.
+ </summary>
+ <param name="TF">If true, displays the critical ratios..</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Crdiff">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays a 'critical ratio' for each pair of parameter estimates. The critical ratio for a pair of parameter estimates provides a test of the hypothesis that the two parameters are equal.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TotalEffects(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display direct, indirect and total effects (Fox, 1980).
+ </summary>
+ <param name="TF">If true, displays direct, indirect and total effects.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TotalEffects">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays direct, indirect and total effects (Fox, 1980).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FactorScoreWeights(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display regression weights for predicting the unobserved variables from the observed variables.
+ </summary>
+ <param name="TF">If true, displays the regression weights.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.FactorScoreWeights">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays regression weights for predicting the unobserved variables from the observed variables.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ImpliedMoments(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display the implied means, variances and covariances of the observed variables.
+ </summary>
+ <param name="TF">If true, displays the implied means, variances and covariances.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ImpliedMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the implied means, variances and covariances of the observed variables.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.SampleMoments(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display the sample covariance matrix and (if means and intercepts are explicitly modeled) the sample means.
+ </summary>
+ <param name="TF">If true, displays the sample covariance matrix and (if means and intercepts are explicitly modeled) the sample means.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.SampleMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the sample covariance matrix and (if means and intercepts are explicitly modeled) the sample means.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ResidualMoments(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls displaying of the difference between the sample moments (means, variances and covariances) and the implied moments.
+ </summary>
+ <param name="TF">If true, displays the difference between the sample moments (means, variances and covariances) and the implied moments.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ResidualMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the difference between the sample moments (means, variances and covariances) and the implied moments.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ObservedInfo(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether the covariance matrix of estimates is estimated by inverting the approximate second derivatives or the exact second derivatives.
+ </summary>
+ <param name="TF">If true, inverts the exact second derivatives.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ObservedInfo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Estimates the covariance matrix of estimates by inverting the exact second derivatives.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GenerateDefaultCovariances(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether non-unique variables are allowed to covary by default.
+ </summary>
+ <param name="TF">If true, allows non-unique variables to covary by default.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GenerateDefaultCovariances">
+ -----------------------------------------------------------------------------
+ <summary>
+ Allow non-unique variables to covary by default.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputUnbiasedMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that any sample covariances read from a data file are unbiased estimates of the corresponding population covariances.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.InputMLMoments">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that any sample covariances read from a data file are (biased) maximum likelihood estimates of the corresponding population covariances.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AllowUnidentified(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos tries to fit a model that appears to be unidentified.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AllowUnidentified">
+ -----------------------------------------------------------------------------
+ <summary>
+ Try to fit models that appear to be unidentified.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Technical(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display information about the progress of minimization of the discrepancy function.
+ </summary>
+ <param name="TF">If true, displays information about the progress of minimization of the discrepancy function.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Technical">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays information about the progress of minimization of the discrepancy function.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NonPositive(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether Amos attempts to obtain maximum likelihood estimates even if a sample covariance matrix is not positive definite.
+ </summary>
+ <param name="TF">If true, attempts to obtain maximum likelihood estimates even if a sample covariance matrix is not positive definite.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.NonPositive">
+ -----------------------------------------------------------------------------
+ <summary>
+ Attempts to obtain maximum likelihood estimates even if a sample covariance matrix is not positive definite.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Paginate(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Paginate method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Paginate">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Paginate method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Model(System.String,System.String[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Places equality constraints on model parameters.
+ </summary>
+ <param name="modelName"></param>
+ <param name="constraints"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ReviseModel(System.String,System.String[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Changes the constraints on a model that was previously defined by the Model method.
+ </summary>
+ <param name="modelName"></param>
+ <param name="constraints"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Standardized(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies whether to display standardized parameter estimates (correlations among exogenous variables, and standardized regression weights).
+ </summary>
+ <param name="TF">If true, displays standardized parameter estimates.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Standardized">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays standardized parameter estimates (correlations among exogenous variables, and standardized regression weights).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Initialize(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Initializes the Amos engine and specifies file names and location for default output.
+ </summary>
+ <param name="projectName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.DataFileNVariables(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of variables in a dataset.
+ </summary>
+ <param name="groupNumber"></param>
+ <returns>The number of variables</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.DataFileNVariables">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of variables in a dataset.
+ </summary>
+ <returns>The number of variables</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.DataFileNCases(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of cases in a dataset.
+ </summary>
+ <param name="groupNumber">A group number. The first group is group number 1.</param>
+ <returns>The number of cases</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.DataFileNCases">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of cases in the dataset for group number 1.
+ </summary>
+ <returns>The number of cases</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroup(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Simplified form of the BeginGroupEx method.
+ </summary>
+ <param name="fileName">The name of the data file</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroup(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Simplified form of the BeginGroupEx method.
+ </summary>
+ <param name="fileName">The name of the data file</param>
+ <param name="tableName">The name of a data table within the data file</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroup(System.String,System.String,System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Simplified form of the BeginGroupEx method.
+ </summary>
+ <param name="fileName">The name of the data file</param>
+ <param name="groupingVariable">The grouping variable</param>
+ <param name="groupingValue">The grouping value. The analysis includes those cases for which the grouping variable takes on this value.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroup(System.String,System.String,System.String,System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Simplified form of the BeginGroupEx method.
+ </summary>
+ <param name="fileName">The name of the data file</param>
+ <param name="tableName">The name of a data table within the data file</param>
+ <param name="groupingVariable">The grouping variable</param>
+ <param name="groupingValue">The grouping value. The analysis includes those cases for which the grouping variable takes on this value.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroupEx(MiscAmosTypes.cDatabaseFormat,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the data file, and begins the model specification for a single group.
+ </summary>
+ <param name="dbFormat">A database format specifier</param>
+ <param name="fileName">The name of the data file</param>
+ <param name="tableName">The name of a data table within the data file</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.BeginGroupEx(MiscAmosTypes.cDatabaseFormat,System.String,System.String,System.String,System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the data file, and begins the model specification for a single group.
+ </summary>
+ <param name="dbFormat">A database format specifier</param>
+ <param name="fileName">The name of the data file</param>
+ <param name="tableName">The name of a data table within the data file</param>
+ <param name="groupingVariable">The grouping variable</param>
+ <param name="groupingValue">The grouping value. The analysis includes those cases for which the grouping variable takes on this value.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.AStructure(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ A general-purpose method for model specification.
+ </summary>
+ <param name="S"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.MStructure(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Frees or constrains the mean of an exogenous variable.
+ </summary>
+ <param name="s"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleCovariances(System.Double[0:,0:],System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances.
+ </summary>
+ <param name="covariancesBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleCovariances(System.Double[0:,0:])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances in group number 1.
+ </summary>
+ <param name="covariancesBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleMoments(System.Double[0:,0:],System.Double[],System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances and sample means.
+ </summary>
+ <param name="covariancesBase0"></param>
+ <param name="meansBase0"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleMoments(System.Double[0:,0:],System.Double[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances and sample means in group number 1.
+ </summary>
+ <param name="covariancesbase0"></param>
+ <param name="meansBase0"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Title(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a title for the analysis.
+ </summary>
+ <param name="theTitle"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ModelMeansAndIntercepts">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies that means and intercepts are explicit model parameters.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.ModelingMeansAndIntercepts">
+ -----------------------------------------------------------------------------
+ <summary>
+ Deprecated in Amos 6. Use the IsModelingMeansAndIntercepts method instead.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.IsModelingMeansAndIntercepts">
+ -----------------------------------------------------------------------------
+ <summary>
+ True if means/intercepts are explicit model parameters.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.TextOutputFileName">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the fully qualified path to the *.AmosOutput file that contains output displayed by the TextOutput method.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/6/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.Interrupt">
+ -----------------------------------------------------------------------------
+ <summary>
+ Stop any ongoing calculations. Equivalent to selecting Analyze->Stop Calculating Estimates from the Amos Graphics menu.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:AmosEngineLib.AmosEngine.AmosDir">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Amos program directory.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.SkipStandardizedImpliedMoments(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ If True, skip the calculation of standardized implied moments.
+ </summary>
+ <param name="TF"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	6/25/2006	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PackSymmetricEstimates(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether the GetEstimates method returns symmetric matrices as square two-dimensional arrays or as one-dimensional arrays that contain only the lower triangle.
+ </summary>
+ <param name="TF">If true, the GetEstimates method will return symmetric matrices as one-dimensional arrays that contain only the lower triangle.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleCovariancesPacked(System.Double[],System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the matrix of sample covariances, where sample covariances are stored as a one-dimensional array. See Help for warnings about the use of this method.
+ </summary>
+ <param name="covariances"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleCovariancesPacked(System.Double[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the matrix of sample covariances in group number 1, where sample covariances are stored as a one-dimensional array. See Help for warnings about the use of this method.
+ </summary>
+ <param name="covariances"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleMomentsPacked(System.Double[],System.Double[],System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances and the sample means when sample covariances are stored as a one-dimensional array.
+ </summary>
+ <param name="covariances"></param>
+ <param name="means"></param>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.PutSampleMomentsPacked(System.Double[],System.Double[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Assigns values to the sample covariances and the sample means in group number 1 with the lower triangle of the covariance matrix stored as a one-dimensional array.
+ </summary>
+ <param name="covariances"></param>
+ <param name="means"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.EnableDisplay(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Controls whether the Amos Engine displays a progress window.
+ </summary>
+ <param name="TF">If true, display the progress window.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/3/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.GetDataFile(System.Int32,MiscAmosTypes.cDatabaseFormat@,System.String@,System.String@,System.String@,System.Object@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets information about the data file for a single group.
+ </summary>
+ <param name="groupNumber"></param>
+ <param name="dbFormat"></param>
+ <param name="fileName"></param>
+ <param name="tableName"></param>
+ <param name="groupingVariable"></param>
+ <param name="groupingValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/5/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:AmosEngineLib.AmosEngine.IUserValue.Value(System.Int32,System.Int32,AmosEngineLib.CValue)">
+ <summary>
+ Return the value of the user-defined estimands for the original sample or for a single bootstrap sample. The Value function may return either a double (if there is a single user-defined estimand), or an array of doubles (if there are multiple user-defined estimnands).
+ </summary>
+ <param name="groupNumber">
+ The Value function should return the value of the user-defined estimands for the group specified by groupNumber.
+ </param>
+ <param name="bootstrapSampleNumber">
+ The Value function is called with bootstrapSampleNumber=1 for the first bootstrap sample, bootstrapSampleNumber=2 for the second bootstrap sample, and so on. It is called with bootstrapSampleNumber=0 for the original sample.
+ </param>
+ <param name="v">
+ An object that provides access to parameter estimates and other pre-calculated estimates for a single sample. You may use these estimates as a starting point for calculating estimates of your own estimands. (Type 'u.' to get a list of properties and methods that you can use to access Amos's parameter estimates and other pre-calculated estimates.)
+ </param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetTotalEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of total effects.
+ As an alternative, you can use GetTotalEffectsElement to get the total effect of one variable on another.
+ </summary>
+ <param name="theTotalEffects">
+ The matrix of total effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of total effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of total effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetTotalEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of total effects, giving the total effect of one variable on another.
+ As an alternative, you can use GetTotalEffectsMatrix to get the entire matrix of total effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the total effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose total effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of total effects, giving the total effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetTotalEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of total effects, giving the total effect of one variable on another.
+ As an alternative, you can use GetTotalEffectsMatrix to get the entire matrix of total effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the total effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose total effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of total effects, giving the total effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetDirectEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of direct effects.
+ As an alternative, you can use GetDirectEffectsElement to get the direct effect of one variable on another.
+ </summary>
+ <param name="theDirectEffects">
+ The matrix of direct effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of direct effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of direct effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetDirectEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of direct effects, giving the direct effect of one variable on another.
+ As an alternative, you can use GetDirectEffectsMatrix to get the entire matrix of direct effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the direct effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose direct effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of direct effects, giving the direct effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetDirectEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of direct effects, giving the direct effect of one variable on another.
+ As an alternative, you can use GetDirectEffectsMatrix to get the entire matrix of direct effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the direct effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose direct effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of direct effects, giving the direct effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetIndirectEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of indirect effects.
+ As an alternative, you can use GetIndirectEffectsElement to get the indirect effect of one variable on another.
+ </summary>
+ <param name="theIndirectEffects">
+ The matrix of indirect effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of indirect effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of indirect effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetIndirectEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of indirect effects, giving the indirect effect of one variable on another.
+ As an alternative, you can use GetIndirectEffectsMatrix to get the entire matrix of indirect effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the indirect effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose indirect effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of indirect effects, giving the indirect effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetIndirectEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of indirect effects, giving the indirect effect of one variable on another.
+ As an alternative, you can use GetIndirectEffectsMatrix to get the entire matrix of indirect effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the indirect effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose indirect effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of indirect effects, giving the indirect effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedTotalEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of standardized total effects.
+ As an alternative, you can use GetStandardizedTotalEffectsElement to get the standardized total effect of one variable on another.
+ </summary>
+ <param name="theStandardizedTotalEffects">
+ The matrix of standardized total effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of standardized total effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of standardized total effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedTotalEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of standardized total effects, giving the standardized total effect of one variable on another.
+ As an alternative, you can use GetStandardizedTotalEffectsMatrix to get the entire matrix of standardized total effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the standardized total effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose standardized total effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized total effects, giving the standardized total effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedTotalEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of standardized total effects, giving the standardized total effect of one variable on another.
+ As an alternative, you can use GetStandardizedTotalEffectsMatrix to get the entire matrix of standardized total effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the standardized total effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose standardized total effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized total effects, giving the standardized total effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedDirectEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of standardized direct effects.
+ As an alternative, you can use GetStandardizedDirectEffectsElement to get the standardized direct effect of one variable on another.
+ </summary>
+ <param name="theStandardizedDirectEffects">
+ The matrix of standardized direct effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of standardized direct effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of standardized direct effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedDirectEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of standardized direct effects, giving the standardized direct effect of one variable on another.
+ As an alternative, you can use GetStandardizedDirectEffectsMatrix to get the entire matrix of standardized direct effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the standardized direct effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose standardized direct effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized direct effects, giving the standardized direct effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedDirectEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of standardized direct effects, giving the standardized direct effect of one variable on another.
+ As an alternative, you can use GetStandardizedDirectEffectsMatrix to get the entire matrix of standardized direct effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the standardized direct effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose standardized direct effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized direct effects, giving the standardized direct effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedIndirectEffectsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of standardized indirect effects.
+ As an alternative, you can use GetStandardizedIndirectEffectsElement to get the standardized indirect effect of one variable on another.
+ </summary>
+ <param name="theStandardizedIndirectEffects">
+ The matrix of standardized indirect effects. Each row and each column corresponds to a single model variable. The elements of the matrix give the effects of the column variables on the row variables. In other words, the column variables affect the row variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of standardized indirect effects.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of standardized indirect effects.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedIndirectEffectsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of standardized indirect effects, giving the standardized indirect effect of one variable on another.
+ As an alternative, you can use GetStandardizedIndirectEffectsMatrix to get the entire matrix of standardized indirect effects.
+ </summary>
+ <param name="rowVariableName">
+ The name of the "dependent" variable for which you want to estimate the standardized indirect effect of some other variable.
+ </param>
+ <param name="columnVariableName">
+ The name of the "independent" variable whose standardized indirect effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized indirect effects, giving the standardized indirect effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedIndirectEffectsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of standardized indirect effects, giving the standardized indirect effect of one variable on another.
+ As an alternative, you can use GetStandardizedIndirectEffectsMatrix to get the entire matrix of standardized indirect effects.
+ </summary>
+ <param name="rowVariable">
+ The "dependent" variable for which you want to estimate the standardized indirect effect of some other variable.
+ </param>
+ <param name="columnVariable">
+ The "independent" variable whose standardized indirect effect on some other variable you want to estimate.
+ </param>
+ <returns>
+ One element of the matrix of standardized indirect effects, giving the standardized indirect effect of one variable on another.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetFactorScoreWeightsMatrix(System.Double[0:,0:]@,AmosEngineLib.t.VariableList@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the matrix of factor score weights.
+ As an alternative, you can use GetFactorScoreWeightsElement to get one element of the matrix of factor score weights.
+ </summary>
+ <param name="theFactorScoreWeights">
+ The matrix of factor score weights. The rows of the matrix correspond to the unobserved variables in the model. The columns correspond to the observed variables. The elements of the matrix give the regression weights for using the observed variables to predict the unobserved variables.
+ </param>
+ <param name="rowVariables">
+ A list of the variables that correspond to the rows of the matrix of factor score weights.
+ </param>
+ <param name="columnVariables">
+ A list of the variables that correspond to the columns of the matrix of factor score weights.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetFactorScoreWeightsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the matrix of factor score weights, giving the regression weight applied to one of the observed variables in predicting one of the latent variables.
+ As an alternative, you can use GetFactorScoreWeightsMatrix to get the entire matrix of factor score weights.
+ </summary>
+ <param name="rowVariableName">
+ The name of one (predicted) latent variable.
+ </param>
+ <param name="columnVariableName">
+ The name of one observed variable (which acts as a predictor).
+ </param>
+ <returns>
+ The regression weight.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetFactorScoreWeightsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the matrix of factor score weights, giving the regression weight applied to one of the observed variables in predicting one of the latent variables.
+ As an alternative, you can use GetFactorScoreWeightsMatrix to get the entire matrix of factor score weights.
+ </summary>
+ <param name="rowVariable">
+ A (predicted) latent variable.
+ </param>
+ <param name="columnVariable">
+ An observed variable (which acts as a predictor).
+ </param>
+ <returns>
+ The regression weight.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetRegressionWeightList">
+ <summary>
+ Gets the estimated regression weights.
+ </summary>
+ <returns>
+ A list of 'OrderedPairAndValue' objects.
+ Each 'OrderedPairAndValue' object consists of a dependent variable (the 'to' variable), an independent variable (the 'from' variable), and a regression weight.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetMeanList">
+ <summary>
+ Gets the estimated means for the exogenous variables.
+ </summary>
+ <returns>
+ A list of 'VariableAndValue' objects.
+ Each 'VariableAndValue' object consists of an exogenous variable and a mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetInterceptList">
+ <summary>
+ Gets estimates of the intercepts in the regression equations for predicting the endogenous variables.
+ </summary>
+ <returns>
+ A list of 'VariableAndValue' objects.
+ Each 'VariableAndValue' object consists of an endogenous variable and an intercept.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetCovarianceList">
+ <summary>
+ Gets the covariances among exogenous variables.
+ </summary>
+ <returns>
+ A list of 'UnorderedPairAndValue' objects.
+ Each 'UnorderedPairAndValue' object consists of two variables and a covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetVarianceList">
+ <summary>
+ Gets the variances of exogenous variables.
+ </summary>
+ <returns>
+ A list of 'VariableAndValue' objects.
+ Each 'VariableAndValue' object consists of an exogenous variable and a variance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetStandardizedRegressionWeightList">
+ <summary>
+ Gets the standardized regression weights.
+ </summary>
+ <returns>
+ A list of 'OrderedPairAndValue' objects.
+ Each 'OrderedPairAndValue' object consists of a dependent variable (the 'to' variable), an independent variable (the 'from' variable), and a standardized regression weight.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetCorrelationList">
+ <summary>
+ Gets the correlations among exogenous variables.
+ </summary>
+ <returns>
+ A list of 'UnorderedPairAndValue' objects.
+ Each 'UnorderedPairAndValue' object consists of two variables and a correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSmcList">
+ <summary>
+ Gets a list of squared multiple correlations for the endogenous variables.
+ </summary>
+ <returns>
+ A list of 'VariableAndValue' objects.
+ Each 'VariableAndValue' object consists of an endogenous variable and a squared multiple correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSmc(System.String)">
+ <summary>
+ Gets the squared multiple correlation for an endogenous variable.
+ </summary>
+ <param name="variableName">The name of an endogenous variable.</param>
+ <returns>
+ The squared multiple correlation.
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSmc(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the squared multiple correlation for an endogenous variable.
+ </summary>
+ <param name="theVariable">An endogenous variable.</param>
+ <returns>
+ The squared multiple correlation.
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCovariancesMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied covariance matrix for the observed variables.
+ As an alternative, you can use GetImpliedCovariancesElement to get the implied covariance between two observed variables or the implied variance of a single observed variable.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The implied covariance matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the implied covariance matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCovariancesElement(System.String,System.String)">
+ <summary>
+ Gets one element of the implied covariance matrix for the observed variables, giving the implied covariance between two observed variables.
+ As an alternative, you can use GetImpliedCovariancesMatrix to get the entire matrix of implied covariances.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed variable.
+ </param>
+ <returns>
+ The implied covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCovariancesElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied covariance matrix for the observed variables, giving the implied covariance between two observed variables.
+ As an alternative, you can use GetImpliedCovariancesMatrix to get the entire matrix of implied covariances.
+ </summary>
+ <param name="rowVariable">
+ An observed variable.
+ </param>
+ <param name="columnVariable">
+ An observed variable.
+ </param>
+ <returns>
+ The implied covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCorrelationsMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied correlation matrix for the observed variables in the model.
+ As an alternative, you can use GetImpliedCorrelationsElement to get the implied correlation between two observed variables.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The implied correlation matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the implied correlation matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCorrelationsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the implied correlation matrix for the observed variables, giving the implied correlation between two observed variables.
+ As an alternative, you can use GetImpliedCorrelationsMatrix to get the entire matrix of implied correlations.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed variable.
+ </param>
+ <returns>
+ The implied correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedCorrelationsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied correlation matrix for the observed variables, giving the implied correlation between two observed variables.
+ As an alternative, you can use GetImpliedCorrelationsMatrix to get the entire matrix of implied correlations.
+ </summary>
+ <param name="rowVariable">
+ An observed variable.
+ </param>
+ <param name="columnVariable">
+ An observed variable.
+ </param>
+ <returns>
+ The implied correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedMeansVector(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied means vector for the observed variables.
+ As an alternative, you can use GetImpliedMeansElement to get the implied mean of a single observed variable.
+ </summary>
+ <param name="theVector">
+ A vector of implied means.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the elements of the implied means vector.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedMeansElement(System.String)">
+ <summary>
+ Gets one element of the implied means vector for the observed variables, giving the implied mean for a single observed variable.
+ As an alternative, you can use GetImpliedMeansVector to get the entire vector of implied means.
+ </summary>
+ <param name="variableName">
+ The name of an observed variable whose implied mean you want.
+ </param>
+ <returns>
+ The implied mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetImpliedMeansElement(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied means vector for the observed variables, giving the implied mean for a single observed variable.
+ As an alternative, you can use GetImpliedMeansVector to get the entire vector of implied means.
+ </summary>
+ <param name="theVariable">
+ An observed variable whose implied mean you want.
+ </param>
+ <returns>
+ The implied mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCovariancesMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied covariance matrix for all observed and latent variables.
+ As an alternative, you can use GetAllImpliedCovariancesElement to get the implied covariance between two observed or latent variables or the implied variance of a single observed or latent variable.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The implied covariance matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the implied covariance matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCovariancesElement(System.String,System.String)">
+ <summary>
+ Gets one element of the implied covariance matrix for all observed and latent variables, giving the implied covariance between two observed or latent variables.
+ As an alternative, you can use GetAllImpliedCovariancesMatrix to get the entire matrix of implied covariances.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed or latent variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed or latent variable.
+ </param>
+ <returns>
+ The implied covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCovariancesElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied covariance matrix for all observed and latent variables, giving the implied covariance between two observed or latent variables.
+ As an alternative, you can use GetAllImpliedCovariancesMatrix to get the entire matrix of implied covariances.
+ </summary>
+ <param name="rowVariable">
+ An observed or latent variable.
+ </param>
+ <param name="columnVariable">
+ An observed or latent variable.
+ </param>
+ <returns>
+ The implied covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCorrelationsMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied correlation matrix for all observed and latent variables.
+ As an alternative, you can use GetAllImpliedCorrelationsElement to get the implied correlation between two observed or latent variables.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The implied correlation matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the implied correlation matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCorrelationsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the implied correlation matrix for all observed and latent variables, giving the implied correlation between two observed or latent variables.
+ As an alternative, you can use GetAllImpliedCorrelationsMatrix to get the entire matrix of implied correlations.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed or latent variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed or latent variable.
+ </param>
+ <returns>
+ The implied correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedCorrelationsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied correlation matrix for all observed and latent variables, giving the implied correlation between two observed or latent variables.
+ As an alternative, you can use GetAllImpliedCorrelationsMatrix to get the entire matrix of implied correlations.
+ </summary>
+ <param name="rowVariable">
+ An observed or latent variable.
+ </param>
+ <param name="columnVariable">
+ An observed or latent variable.
+ </param>
+ <returns>
+ The implied correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedMeansVector(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the implied means vector for all observed and latent variables.
+ As an alternative, you can use GetAllImpliedMeansElement to get the implied mean of a single observed or latent variable.
+ </summary>
+ <param name="theVector">
+ A vector of implied means.</param>
+ <param name="variables">
+ A list of the variables that correspond to the elements of the implied means vector.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedMeansElement(System.String)">
+ <summary>
+ Gets one element of the implied means vector for all observed and latent variables, giving the implied mean for a single observed or latent variable.
+ As an alternative, you can use GetAllImpliedMeansVector to get the entire vector of implied means.
+ </summary>
+ <param name="variableName">
+ The name of an observed or latent variable whose implied mean you want.
+ </param>
+ <returns>
+ The implied mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetAllImpliedMeansElement(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the implied means vector for all observed and latent variables, giving the implied mean for a single observed or latent variable.
+ As an alternative, you can use GetAllImpliedMeansVector to get the entire vector of implied means.
+ </summary>
+ <param name="theVariable">
+ An observed or latent variable whose implied mean you want.
+ </param>
+ <returns>
+ The implied mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCovariancesMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the sample covariance matrix.
+ As an alternative, you can use GetSampleCovariancesElement to get the sample covariance between two variables or the sample variance of a single variable.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The sample correlation matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the sample covariance matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCovariancesElement(System.String,System.String)">
+ <summary>
+ Gets one element of the sample covariance matrix, giving the sample covariance between two observed variables.
+ As an alternative, you can use GetSampleCovariancesMatrix to get the entire matrix of sample covariances.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed variable.
+ </param>
+ <returns>
+ The sample covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCovariancesElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the sample covariance matrix, giving the sample covariance between two observed variables.
+ As an alternative, you can use GetSampleCovariancesMatrix to get the entire matrix of sample covariances.
+ </summary>
+ <param name="rowVariable">
+ An observed variable.
+ </param>
+ <param name="columnVariable">
+ An observed variable.
+ </param>
+ <returns>
+ The sample covariance.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCorrelationsMatrix(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the sample correlation matrix.
+ As an alternative, you can use GetSampleCorrelationsElement to get the sample correlation between two observed variables.
+ </summary>
+ <param name="theSymmetricMatrix">
+ The sample correlation matrix.
+ The returned matrix contains only the non-redundant diagonal and subdiagonal elements.
+ </param>
+ <param name="variables">
+ A list of the variables that correspond to the rows (and also the columns) of the sample correlation matrix.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCorrelationsElement(System.String,System.String)">
+ <summary>
+ Gets one element of the sample correlation matrix, giving the sample correlation between two observed variables.
+ As an alternative, you can use GetSampleCorrelationsMatrix to get the entire matrix of sample correlations.
+ </summary>
+ <param name="rowVariableName">
+ The name of an observed variable.
+ </param>
+ <param name="columnVariableName">
+ The name of an observed variable.
+ </param>
+ <returns>
+ The sample correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleCorrelationsElement(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the sample correlation matrix, giving the sample correlation between two observed variables.
+ As an alternative, you can use GetSampleCorrelationsMatrix to get the entire matrix of sample correlations.
+ </summary>
+ <param name="rowVariable">
+ An observed variable.
+ </param>
+ <param name="columnVariable">
+ An observed variable.
+ </param>
+ <returns>
+ The sample correlation.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleMeansVector(System.Double[]@,AmosEngineLib.t.VariableList@)">
+ <summary>
+ Gets the sample means vector.
+ As an alternative, you can use GetSampleMeansElement to get the sample mean of a single observed variable.
+ </summary>
+ <param name="theVector">
+ A vector of sample means.</param>
+ <param name="variables">
+ A list of the variables that correspond to the elements of the sample means vector.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleMeansElement(System.String)">
+ <summary>
+ Gets one element of the sample means vector, giving the sample mean for a single observed variable.
+ As an alternative, you can use GetSampleMeansVector to get the entire vector of sample means.
+ </summary>
+ <param name="variableName">
+ The name of an observed variable whose sample mean you want.
+ </param>
+ <returns>
+ The sample mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetSampleMeansElement(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets one element of the sample means vector, giving the sample mean for a single observed variable.
+ As an alternative, you can use GetSampleMeansVector to get the entire vector of sample means.
+ </summary>
+ <param name="theVariable">
+ An observed variable whose sample mean you want.
+ </param>
+ <returns>
+ The sample mean.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetGroupName">
+ <summary>
+ Gets the name of the group for which estimates and sample moments are available during this call to the Value method.
+ </summary>
+ <returns>
+ The group name.</returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.GetGroupName(System.Int32)">
+ <summary>
+ Gets the name of a group.
+ </summary>
+ <param name="groupNumber">
+ A group number, where groupNumber=1 for the first group.
+ </param>
+ <returns>
+ The group name.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.IsModelingMeansAndIntercepts">
+ <summary>
+ Gets a boolean value that indicates whether means and intercepts are explicit model parameters.
+ </summary>
+ <returns>
+ True if means and intercepts are explicit model parameters, false otherwise.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.NumberOfGroups">
+ <summary>
+ Gets the number of groups.
+ </summary>
+ <returns>
+ The number of groups.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.NumberOfParameters">
+ <summary>
+ Gets the number of parameters.
+ </summary>
+ <returns>
+ The number of parameters.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterInfo(System.Int32,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+ <summary>
+ Gets information about a parameter.
+ </summary>
+ <param name="parameterNumber"></param>
+ <param name="groupNumber"></param>
+ <param name="parameterType"></param>
+ <param name="leftVariable"></param>
+ <param name="rightVariable"></param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterName(System.Int32)">
+ <summary>
+ Gets the name of a parameter.
+ </summary>
+ <param name="parameterIndex">
+ An integer index that identifies a parameter uniquely. parameterIndex ranges from 1 to n, where n is the number of parameters.
+ </param>
+ <returns>
+ A parameter name, which will be an empty string for parameters that are not named.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterNumber(System.String)">
+ <summary>
+ Gets an integer index that identifies a parameter uniquely.
+ </summary>
+ <param name="parameterName">
+ The parameter name. (Note that some parameters may be unnamed.)
+ </param>
+ <returns>
+ An integer index that identifies a parameter uniquely. The index ranges from 1 to n, where n is the number of parameters.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterValue(System.String)">
+ <summary>
+ Gets a parameter value.
+ </summary>
+ <param name="parameterName">
+ The parameter name. (Note that some parameters may be unnamed.)
+ </param>
+ <returns>
+ The parameter value.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterValue(System.Int32)">
+ <summary>
+ Gets a parameter value.
+ </summary>
+ <param name="parameterIndex">
+ An integer index that identifies a parameter uniquely. parameterIndex ranges from 1 to n, where n is the number of parameters.
+ </param>
+ <returns>The parameter value.</returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ParameterVector(System.Double[]@)">
+ <summary>
+ Gets a vector of all parameter values.
+ </summary>
+ <param name="theVector">
+ The vector of parameter values.
+ </param>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ListOfObservedVariables">
+ <summary>
+ Gets a list of the observed variables in the model.
+ </summary>
+ <returns>
+ The list of observed variables in the model.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ListOfUnobservedVariables">
+ <summary>
+ Gets a list of the unobserved variables in the model.
+ </summary>
+ <returns>
+ The list of unobserved variables in the model.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.ListOfEndogenousVariables">
+ <summary>
+ Gets a list of the endogenous variables in the model.
+ </summary>
+ <returns>
+ The list of endogenous variables in the model.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValue.VariableFromName(System.String)">
+ <summary>
+ Gets a 'variable object' (i.e., an object of type 'variable'). A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <param name="variableName">
+ A variable name.
+ </param>
+ <returns>
+ A 'variable' object (i.e., an object of type 'variable').
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.ImpliedCovariance(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the implied covariance between two observed or latent variables.
+ This method cannot be used to get the implied covariance between a unique variable (such as an error variable) and another variable.
+ </summary>
+ <param name="variable1">
+ An observed or latent variable
+ </param>
+ <param name="variable2">
+ An observed or latent variable
+ </param>
+ <returns>
+ The implied covariance
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.ImpliedCorrelation(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the implied correlation between two observed or latent variables.
+ This method cannot be used to get the implied correlation between a unique variable (such as an error variable) and another variable.
+ </summary>
+ <param name="variable1">
+ An observed or latent variable
+ </param>
+ <param name="variable2">
+ An observed or latent variable
+ </param>
+ <returns>
+ The implied correlation
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.ImpliedMean(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the implied mean for a single observed or latent variable.
+ This method cannot be used to get the implied mean of a unique variable (such as an error variable).
+ </summary>
+ <param name="theVariable">
+ An observed or latent variable
+ </param>
+ <returns>
+ The implied mean
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.SampleCorrelation(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the sample correlation between two observed variables.
+ </summary>
+ <param name="variable1">
+ An observed variable
+ </param>
+ <param name="variable2">
+ An observed variable
+ </param>
+ <returns>
+ The sample correlation
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.SampleCovariance(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the sample covariance between two observed variables.
+ </summary>
+ <param name="variable1">
+ An observed variable
+ </param>
+ <param name="variable2">
+ An observed variable
+ </param>
+ <returns>
+ The sample covariance
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.ModelingMeansAndInterceptsInCurrentGroup">
+ <summary>
+ Gets a boolean value that indicates whether means and intercepts are explicit model parameters in the current group.
+ </summary>
+ <returns>
+ True if means and intercepts are explicit model parameters in the current group
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.DirectEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the direct effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The direct effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.IndirectEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the indirect effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The indirect effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.TotalEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the total effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The total effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.StandardizedDirectEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the standardized direct effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The standardized direct effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.StandardizedIndirectEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the standardized indirect effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The standardized indirect effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.StandardizedTotalEffect(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the standardized total effect of one variable on another.
+ </summary>
+ <param name="dependentVariable">
+ The "dependent" variable
+ </param>
+ <param name="independentVariable">
+ The "independent" variable
+ </param>
+ <returns>
+ The standardized total effect
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.FactorScoreWeight(AmosEngineLib.t.Variable,AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the regression weight applied to one of the observed variables when all observed variables are used
+ to predict one of the latent variables.
+ </summary>
+ <param name="latentVariable">
+ A (predicted) latent variable
+ </param>
+ <param name="observedVariable">
+ An observed predictor variable
+ </param>
+ <returns>
+ The regression weight
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.SampleMean(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the sample mean for a single observed variable.
+ </summary>
+ <param name="theVariable">
+ An observed variable
+ </param>
+ <returns>
+ The sample mean
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.Smc(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the squared multiple correlation between an endogenous variable and its predictors.
+ </summary>
+ <param name="theVariable">
+ An endogenous variable
+ </param>
+ <returns>
+ The squared multiple correlation
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="M:AmosEngineLib.CValueSimple.Intercept(AmosEngineLib.t.Variable)">
+ <summary>
+ Gets the intercept in the regression equation for predicting an endogenous variable.
+ </summary>
+ <param name="theVariable">
+ An endogenous variable
+ </param>
+ <returns>
+ The intercept
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="T:AmosEngineLib.t.Variable">
+ <summary>
+ An object that provides information about a single model variable.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.Variable.Name">
+ <summary>
+ Gets the variable's name.
+ </summary>
+ <value>
+ </value>
+ <returns>The variable's name.</returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.Variable.IsUnique">
+ <summary>
+ Gets a boolean value that indicates whether the variable is a unique variable (i.e., is unobserved and exogenous, and affects only one other variable).
+ </summary>
+ <value>
+ True if the variable is a unique variable.
+ </value>
+ <returns>
+ True if the variable is a unique variable.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.Variable.IsEndogenous">
+ <summary>
+ Gets a boolean value that indicates whether the variable is endogenous.
+ </summary>
+ <value>
+ True if the variable is endogenous.
+ </value>
+ <returns>
+ True if the variable is endogenous.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.Variable.IsObserved">
+ <summary>
+ Gets a boolean value that indicates whether the variable is observed.
+ </summary>
+ <value>
+ True if the variable is observed.
+ </value>
+ <returns>
+ True if the variable is observed.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:AmosEngineLib.t.VariableList">
+ <summary>
+ The VariableList class inherits from Generic.List(Of Variable).
+ VariableList does not have any members other than the members of Generic.List(Of Variable).
+ The VariableList class is provided only as shorthand for Generic.List(Of Variable).
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:AmosEngineLib.t.VariableAndValue">
+ <summary>
+ A VariableAndValue object consists of a model variable together with a numeric value that is
+ associated with the variable.
+ For example, a VariableAndValue object might contain a variable and its variance, or a variable and its mean.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.VariableAndValue.variable">
+ <summary>
+ Gets a 'variable' object. A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <value>
+ </value>
+ <returns>
+ The 'variable' object.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.VariableAndValue.value">
+ <summary>
+ Gets a numeric value that is associated with a model variable (for example, the variable's mean or variance).
+ </summary>
+ <value>
+ </value>
+ <returns>
+ The numeric value.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:AmosEngineLib.t.OrderedPairAndValue">
+ <summary>
+ An OrderedPairAndValue object consists of an ordered pair of variables and a numeric value associated with the pair.
+ For example, it might consist of an independent variable, a dependent variable, and a regression weight.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.OrderedPairAndValue.fromVariable">
+ <summary>
+ Gets a 'variable' object that refers to an independent variable. A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <value>
+ </value>
+ <returns>
+ The independent variable object.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.OrderedPairAndValue.toVariable">
+ <summary>
+ Gets a 'variable' object that refers to a dependent variable. A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <value>
+ </value>
+ <returns>
+ The dependent variable object.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.OrderedPairAndValue.value">
+ <summary>
+ Gets a numeric value, either a regression weight or a standardized regression weight, that is associated with an ordered pair of variables.
+ </summary>
+ <value>
+ </value>
+ <returns>
+ The regression weight or standardized regression weight.
+ </returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:AmosEngineLib.t.UnorderedPairAndValue">
+ <summary>
+ An UnorderedPairAndValue object consists of an unordered pair of variables and a numeric value associated with the pair.
+ For example, it might consist of two variables and their correlation.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.UnorderedPairAndValue.variable1">
+ <summary>
+ Gets a 'variable' object. A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <value>
+ </value>
+ <returns>A 'variable' object.</returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.UnorderedPairAndValue.variable2">
+ <summary>
+ Gets a 'variable' object. A 'variable' object contains information about a variable, such as its name, whether it is exogenous, etc.
+ </summary>
+ <value>
+ </value>
+ <returns>A 'variable' object.</returns>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:AmosEngineLib.t.UnorderedPairAndValue.value">
+ <summary>
+ Gets a numeric value, such as a correlation or covariance, that is associated with an unordered pair of variables.
+ </summary>
+ <value>
+ </value>
+ <returns>The numeric value.</returns>
+ <remarks>
+ </remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Amos.Extensions
+</name>
+</assembly>
+<members>
+<member name="T:AmosExtensions.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AmosExtensions.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AmosExtensions.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:AmosExtensions.frmScript.CacheSplashForm">
+ <summary>
+ Represents a simple splash form to display while the cache is built.
+ </summary>
+</member>
+<member name="M:AmosExtensions.frmScript.CacheSplashForm.#ctor">
+ <summary>
+ Creates a new instance of the <c>CacheSplashForm</c> class.
+ </summary>
+</member>
+<member name="M:AmosExtensions.frmScript.AddSpanIndicator(System.String,System.Int32,ActiproSoftware.SyntaxEditor.SpanIndicator,ActiproSoftware.SyntaxEditor.TextRange)">
+ <summary>
+ Adds a span indicator.
+ </summary>
+ <param name="layerKey">The key of the layer that will add the span indicator.</param>
+ <param name="layerDisplayPriority">The display priority of the layer.</param>
+ <param name="indicator">The <see cref="T:ActiproSoftware.SyntaxEditor.SpanIndicator"/> to add.</param>
+ <param name="textRange">The text range over which to add the indicator.</param>
+</member>
+</members>
+</doc>

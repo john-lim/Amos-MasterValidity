@@ -1,0 +1,3995 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Amos
+</name>
+</assembly>
+<members>
+<member name="M:Amos.MainClass.Commence(System.String[],System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Start an instance of Amos Graphics.
+ </summary>
+ <param name="commandLineArgs"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.MainClass.Commence(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Start an instance of Amos Graphics.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.CalculateEstimates">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fits the specified models. Equivalent to the Amos Graphics menu item Analyze->Calculate Estimates.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ManageGroups.Show">
+ <summary>
+ Opens a dialog for adding, deleting and renaming groups. Equivalent to the Amos Graphics menu item Analyze->Manage Groups.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.ManageGroups.Add">
+ -----------------------------------------------------------------------------
+ <summary>
+ Adds a new group.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ManageGroups.Delete">
+ -----------------------------------------------------------------------------
+ <summary>
+ Deletes the currently selected group.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ManageGroups.Rename(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Renames the currently selected group.
+ </summary>
+ <param name="newGroupName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ManageModels.Show">
+ <summary>
+ Opens a dialog for creating, modifying and deleting models. Equivalent to the Amos Graphics menu item Analyze->Manage Models.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.ModelingLab.Show">
+ <summary>
+ Runs the Modeling Lab. Equivalent to the Amos Graphics menu item Analyze->Modeling Lab.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.ToggleObservedUnobserved(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Change a rectangle to an ellipse, or an ellipse to a rectangle.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ToggleObservedUnobserved(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Change a rectangle to an ellipse, or an ellipse to a rectangle.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ToggleObservedUnobserved(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Change a rectangle to an ellipse, or an ellipse to a rectangle.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.ToggleObservedUnobserved">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Analyze->Toggle Observed/Unobserved.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Analyze.DegreesOfFreedom.Show">
+ <summary>
+ Displays degrees of freedom. Equivalent to the Amos Graphics menu item Analyze->Degrees of Freedom.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.SpecificationSearch.Show">
+ <summary>
+ Equivalent to the Amos Graphics menu item Analyze->Specification Search.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.MultipleGroupAnalysis.Show">
+ <summary>
+ Equivalent to the Amos Graphics menu item Analyze->Multiple-Group Analysis.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.BayesianEstimation.Show">
+ <summary>
+ Equivalent to the Amos Graphics menu item Analyze->Bayesian Estimation.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Analyze.DataImputation.Show">
+ <summary>
+ Equivalent to the Amos Graphics menu item Analyze->Data Imputation.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.Diagram.DrawObserved(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws an observed variable (rectangle).
+ </summary>
+ <param name="x"></param>
+ <param name="y"></param>
+ <param name="width"></param>
+ <param name="height"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawObserved">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Observed.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUnobserved(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws an unobserved variable (ellipse).
+ </summary>
+ <param name="x"></param>
+ <param name="Y"></param>
+ <param name="Width"></param>
+ <param name="Height"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUnobserved">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Unobserved.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawPath(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a regression weight (single-headed arrow).
+ </summary>
+ <param name="elementNumber1"></param>
+ <param name="elementNumber2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawPath(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a regression weight (single-headed arrow).
+ </summary>
+ <param name="variableName1"></param>
+ <param name="variableName2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawPath(Amos.PDElement,Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a regression weight (single-headed arrow).
+ </summary>
+ <param name="theElement1"></param>
+ <param name="theElement2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawPath(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a regression weight (single-headed arrow).
+ </summary>
+ <param name="x1"></param>
+ <param name="y1"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawPath">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Path.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawCovariance(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a covariance (double-headed arrow).
+ </summary>
+ <param name="elementNumber1"></param>
+ <param name="elementNumber2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawCovariance(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a covariance (double-headed arrow).
+ </summary>
+ <param name="variableName1"></param>
+ <param name="variableName2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawCovariance(Amos.PDElement,Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a covariance (double-headed arrow).
+ </summary>
+ <param name="theElement1"></param>
+ <param name="theelement2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawCovariance(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a covariance (double-headed arrow).
+ </summary>
+ <param name="x1"></param>
+ <param name="y1"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawCovariance">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Covariance.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.FigureCaption(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Edits an existing figure caption.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.FigureCaption(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Edits an existing figure caption.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.FigureCaption">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Figure Caption.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawIndicatorVariable(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws an indicator variable and an associated residual variable for an existing unobserved variable.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawIndicatorVariable(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws an indicator variable and an associated residual variable for an existing unobserved variable.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawIndicatorVariable(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws an indicator variable and an associated residual variable for an existing unobserved variable.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawIndicatorVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Indicator Variable.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUniqueVariable(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a unique (residual) variable for an existing variable.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUniqueVariable(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a unique (residual) variable for an existing variable.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUniqueVariable(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Draws a unique (residual) variable for an existing variable.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.DrawUniqueVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Draw Unique Variable.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.Zoom(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Fills the Amos window with a specified portion of the path diagram.
+ </summary>
+ <param name="x1"></param>
+ <param name="y1"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.Zoom">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Zoom.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.ZoomIn">
+ -----------------------------------------------------------------------------
+ <summary>
+ Magnifies the screen image of the path diagram. Equivalent to the Amos Graphics menu item Diagram->Zoom In.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.ZoomOut">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reduces the size of the screen image of the path diagram. Equivalent to the Amos Graphics menu item Diagram->Zoom Out.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.ZoomPage">
+ -----------------------------------------------------------------------------
+ <summary>
+ Resizes the screen image of the path diagram so that one printed page just fits the Amos window.window. Equivalent to the Amos Graphics menu item Diagram->Zoom Page.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.Scroll(System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Scrolls the path diagram.
+ </summary>
+ <param name="x"></param>
+ <param name="Y"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.Scroll">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Diagram->Scroll.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.Loupe">
+ -----------------------------------------------------------------------------
+ <summary>
+ Magnifies the region under the mouse pointer. Equivalent to the Amos Graphics menu item Diagram->Loupe.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Diagram.RedrawDiagram">
+ -----------------------------------------------------------------------------
+ <summary>
+ Redraws the path diagram. Equivalent to the Amos Graphics menu item Diagram->Redraw Diagram.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Undo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Undoes the most recent change to the path diagram. Equivalent to the Amos Graphics menu item Edit->Undo.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Redo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Undoes the effect of the most recent use of the EditUndo method. Equivalent to the Amos Graphics menu item Edit->Redo.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Copy">
+ -----------------------------------------------------------------------------
+ <summary>
+ Copies the path diagram to the Windows clipboard. Equivalent to the Amos Graphics menu item Edit->Copy (to clipboard).
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Paste">
+ -----------------------------------------------------------------------------
+ <summary>
+ Pastes a path diagram from the Windows clipboard. Equivalent to the Amos Graphics menu item Edit->Paste.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Select_(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects one object.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Select_(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects one object.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Select_(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects one object.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Select_">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Edit->Select.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.SelectAll">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects all objects in the path diagram. Equivalent to the Amos Graphics menu item Edit->Select All.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.DeselectAll">
+ -----------------------------------------------------------------------------
+ <summary>
+ Deselects all objects. Equivalent to the Amos Graphics menu item Edit->Deselect All.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Link">
+ -----------------------------------------------------------------------------
+ <summary>
+ Forms a group of objects that will be treated as a unit in future operations. Equivalent to the Amos Graphics menu item Edit->Link.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Move(System.Int32,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Moves a rectangle, ellipse or caption.
+ </summary>
+ <param name="elementNumber"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Move(System.String,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Moves a rectangle or ellipse.
+ </summary>
+ <param name="variableName"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Move(Amos.PDElement,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Moves a rectangle, ellipse or caption.
+ </summary>
+ <param name="theElement"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Move">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Edit->Move.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Duplicate(System.Int32,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Makes a duplicate copy of a rectangle, ellipse or caption.
+ </summary>
+ <param name="elementNumber"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Duplicate(System.String,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Makes a duplicate copy of a rectangle or ellipse.
+ </summary>
+ <param name="variableName"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Duplicate(Amos.PDElement,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Makes a duplicate copy of a rectangle, ellipse or caption.
+ </summary>
+ <param name="theElement"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Duplicate">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Edit->Duplicate.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Erase_(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Erases an object.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Erase_(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Erases an ellipse or rectangle.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Erase_(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Erases an object.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Erase_">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Edit->Erase.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.MoveParameter">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Edit->Move Parameter.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Reflect(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reflects the indicators of a latent variable.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Reflect(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reflects the indicators of a latent variable.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Reflect(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Reflects the indicators of a latent variable.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Reflect">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Edit->Reflect.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Rotate(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rotates the indicators of a latent variable.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Rotate(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rotates the indicators of a latent variable.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Rotate(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rotates the indicators of a latent variable.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.Rotate">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Edit->Rotate.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.ShapeOfObject">
+ -----------------------------------------------------------------------------
+ <summary>
+ Allows the user to change the size and shape of variables (rectangles and ellipses). Equivalent to the Amos Graphics menu item Edit->Shape of Object.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.SpaceHorizontally">
+ -----------------------------------------------------------------------------
+ <summary>
+ Arranges selected objects so that they are equally spaced horizontally. Equivalent to the Amos Graphics menu item Edit->Space Horizontally.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.SpaceVertically">
+ -----------------------------------------------------------------------------
+ <summary>
+ Arranges selected objects so that they are equally spaced vertically. Equivalent to the Amos Graphics menu item Edit->Space Vertically.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.DragProperties(Amos.PDElement,Amos.PDElement,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Copies the properties of one object to other objects.
+ </summary>
+ <param name="theElement1"></param>
+ <param name="theElement2"></param>
+ <param name="Height"></param>
+ <param name="Width"></param>
+ <param name="x"></param>
+ <param name="Y"></param>
+ <param name="nameOrCaption"></param>
+ <param name="ParameterConstraints"></param>
+ <param name="ParameterPosition"></param>
+ <param name="font"></param>
+ <param name="ParameterFont"></param>
+ <param name="penwidth"></param>
+ <param name="curvature"></param>
+ <param name="Colors"></param>
+ <param name="Visibility"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.DragProperties(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Copies the properties of one object to other objects.
+ </summary>
+ <param name="elementNumber1"></param>
+ <param name="elementNumber2"></param>
+ <param name="Height"></param>
+ <param name="Width"></param>
+ <param name="x"></param>
+ <param name="Y"></param>
+ <param name="nameOrCaption"></param>
+ <param name="ParameterConstraints"></param>
+ <param name="ParameterPosition"></param>
+ <param name="font"></param>
+ <param name="ParameterFont"></param>
+ <param name="penwidth"></param>
+ <param name="curvature"></param>
+ <param name="Colors"></param>
+ <param name="Visibility"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.DragProperties(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Copies the properties of one object to other objects.
+ </summary>
+ <param name="variableName1"></param>
+ <param name="variableName2"></param>
+ <param name="Height"></param>
+ <param name="Width"></param>
+ <param name="x"></param>
+ <param name="Y"></param>
+ <param name="nameOrCaption"></param>
+ <param name="ParameterConstraints"></param>
+ <param name="ParameterPosition"></param>
+ <param name="font"></param>
+ <param name="ParameterFont"></param>
+ <param name="penwidth"></param>
+ <param name="curvature"></param>
+ <param name="Colors"></param>
+ <param name="Visibility"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.DragProperties">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Edit->Drag Properties.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.FitToPage">
+ -----------------------------------------------------------------------------
+ <summary>
+ Resizes the path diagram (not just its screen image) so that it fits on a page. Equivalent to the Amos Graphics menu item Edit->Fit to Page.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.TouchUp(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rearranges the arrows in a path diagram in a way intended to be aesthetically pleasing.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.TouchUp(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rearranges the arrows in a path diagram in a way intended to be aesthetically pleasing.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.TouchUp(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Rearranges the arrows in a path diagram in a way intended to be aesthetically pleasing.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Edit.TouchUp">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item Edit->Touch Up.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.New_(Amos.pd.PDSaveChangesEnum)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Starts a new path diagram.
+ </summary>
+ <param name="saveOptions"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.New_">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->New.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.NewWithTemplate(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Starts a new path diagram using a template.
+ </summary>
+ <param name="templateFileName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.NewWithTemplate(System.String,Amos.pd.PDSaveChangesEnum)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Starts a new path diagram using a template.
+ </summary>
+ <param name="templateFileName"></param>
+ <param name="saveOptions"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.NewWithTemplate">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->New with Template.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Open(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Retrieves a path diagram that was saved previously.
+ </summary>
+ <param name="fileName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Open(System.String,Amos.pd.PDSaveChangesEnum)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Retrieves a path diagram that was saved previously.
+ </summary>
+ <param name="fileName"></param>
+ <param name="saveOptions"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Open">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->Open.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.RetrieveBackup">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->Retrieve Backup.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Save">
+ -----------------------------------------------------------------------------
+ <summary>
+ Saves the path diagram as a disk file. Equivalent to the Amos Graphics menu item File->Save.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.SaveAs(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Saves a path diagram with a new name.
+ </summary>
+ <param name="fileName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.SaveAs">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->Save As.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.SaveAsTemplate(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Saves the path diagram as a template.
+ </summary>
+ <param name="templateFileName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.SaveAsTemplate">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item File->Save As Template.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.DataFiles.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens a dialog to allow the user to specify the database file (or files) to be analyzed. Equivalent to the Amos Graphics menu item File->Data Files.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Print.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens a dialog box for printing path diagrams. Equivalent to the Amos Graphics menu item File->Print.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.File.Exit_">
+ -----------------------------------------------------------------------------
+ <summary>
+ Closes the Amos Graphics window.Equivalent to the Amos Graphics menu item File->Exit.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Help.Contents">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens a help window and displays the table of contents for Amos's online help system. Equivalent to the Amos Graphics menu item Help->Contents.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Help.AboutAmos">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Help->About Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Help.AmosOnTheWeb">
+ -----------------------------------------------------------------------------
+ <summary>
+ Uses your web browser to visit the Amos page at the Amos Development web site. Equivalent to the Amos Graphics menu item Help->Amos on the Web.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Plugins.Plugins">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Plugins->Plugins.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.Smart">
+ -----------------------------------------------------------------------------
+ <summary>
+ Turns on or off the preservation of symmetries when objects are moved and resized. Equivalent to the Amos Graphics menu item Tools->Smart.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.Outline">
+ -----------------------------------------------------------------------------
+ <summary>
+ Turns on or off the display of variable names, parameter constraints and arrow heads. Equivalent to the Amos Graphics menu item Tools->Outline.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.Square">
+ -----------------------------------------------------------------------------
+ <summary>
+ Turns on or off the drawing of rectangles as square. Equivalent to the Amos Graphics menu item Tools->Square.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.Golden">
+ -----------------------------------------------------------------------------
+ <summary>
+ Turns on or off the drawing of rectangles as golden sections. Equivalent to the Amos Graphics menu item Tools->Golden.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.WriteAProgram">
+ -----------------------------------------------------------------------------
+ <summary>
+ Converts the Amos Graphics model to a program. Equivalent to the Amos Graphics menu item Tools->Write a Program.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.Customize">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens a dialog for reorganizing the menu and toolbox. Equivalent to the Amos Graphics menu item Tools->Customize.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.ListFont">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Tools->List Font.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.Tools.SeedManager">
+ -----------------------------------------------------------------------------
+ <summary>
+ Equivalent to the Amos Graphics menu item Tools->Seed Manager.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:Amos.m.View.InterfaceProperties">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens the View Interface Properties dialog.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.AnalysisProperties.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens the View Analysis Properties dialog. Equivalent to the Amos Graphics menu item View->Analysis Properties.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.ObjectProperties.Show(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens the View Object Properties dialog.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.ObjectProperties.Show(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens the View Object Properties dialog.
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.ObjectProperties.Show(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Opens the View Object Properties dialog.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.ObjectProperties.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+  Equivalent to the Amos Graphics menu item View->Object Properties.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.VariablesInModel.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays a list of all variables in the model. Equivalent to the Amos Graphics menu item View->Variables in Model.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.VariablesInDataset.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays a list of the variables in the data file. Equivalent to the Amos Graphics menu item View->Variables in Dataset.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.Parameters.Show">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays a list of model parameters.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.SwitchToOtherView">
+ <summary>
+ Switches to a different view of the model.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.m.View.TextOutput">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the text output from an analysis. Equivalent to the Amos Graphics menu item View->Text Output.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.m.View.FullScreen(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the Amos Graphics window maximized without a title bar, or displays it normally.
+ </summary>
+ <param name="TF">If true, display maximized without a title var. If false, display normally.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:Amos.pd">
+ -----------------------------------------------------------------------------
+ <summary>
+ Object that draws path diagrams.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="E:Amos.pd.PreFitOptions">
+ <summary>
+ Event that occurs before model fitting.
+ </summary>
+</member>
+<member name="E:Amos.pd.PostFitResults">
+ <summary>
+ Event that occurs after model fitting is complete.
+ </summary>
+</member>
+<member name="E:Amos.pd.MouseDown">
+ <summary>
+ Event that occurs when a mouse button is pressed.
+ </summary>
+</member>
+<member name="E:Amos.pd.MouseUp">
+ <summary>
+ Event that occurs when a mouse button is released.
+ </summary>
+</member>
+<member name="E:Amos.pd.Quitting">
+ <summary>
+ Event that occurs when the Amos Graphics window is closed.
+ </summary>
+</member>
+<member name="E:Amos.pd.NewObjectCreated">
+ <summary>
+ Event that occurs after a new object is added to the path diagram.
+ </summary>
+</member>
+<member name="E:Amos.pd.OutputIsInvalid">
+ <summary>
+ Event that occurs when Amos Graphics disables the toolbox buttons and the menu items that are used for displaying results.
+ </summary>
+</member>
+<member name="E:Amos.pd.ButtonPressed">
+ <summary>
+ Event that occurs when a toolbox button, or the equivalent menu item, is clicked.
+ </summary>
+</member>
+<member name="E:Amos.pd.QueryUnload">
+ <summary>
+ Event that occurs before the Amos Graphics window closes. You can use this event to keep the Amos Graphics window from closing.
+ </summary>
+</member>
+<member name="E:Amos.pd.OpenWindowsUpdated">
+ <summary>
+ Event that occurs when a change in the model or the data requires an update of various open Amos Graphics windows.
+ </summary>
+</member>
+<member name="E:Amos.pd.AboutToShowMsgBox">
+ <summary>
+ Event that occurs just before Amos Graphics displays certain message boxes.
+ </summary>
+</member>
+<member name="E:Amos.pd.AmwFileWritten">
+ <summary>
+ Event that occurs after Amos Graphics has finished writing a path diagram (*.amw) file.
+ </summary>
+</member>
+<member name="E:Amos.pd.AmwFileRead">
+ <summary>
+ Event that occurs after Amos Graphics has finished reading a path diagram (*.amw) file.
+ </summary>
+</member>
+<member name="E:Amos.pd.PDChanged">
+ <summary>
+ Event that occurs when Amos Graphics starts a new path diagram or opens an existing path diagram.
+ </summary>
+</member>
+<member name="E:Amos.pd.ObjectEntered">
+ <summary>
+ Event that occurs when the mouse pointer comes close to an object and the object changes color.
+ </summary>
+</member>
+<member name="T:Amos.pd.PDSaveChangesEnum">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specify whether to save changes to the current path diagram.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:Amos.pd.PDElementType">
+ -----------------------------------------------------------------------------
+ <summary>
+ The type of a path diagram object.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets an element of a path diagram -- a rectangle, ellipse, arrow or figure caption.
+ </summary>
+ <param name="theElement"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets an element of a path diagram -- a rectangle, ellipse, arrow or figure caption.
+ </summary>
+ <param name="elementNumber"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a rectangle or ellipse.
+ </summary>
+ <param name="variableName"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(Amos.PDElement,Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a single-headed or double-headed arrow.
+ </summary>
+ <param name="theElement1"></param>
+ <param name="theElement2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a single-headed or double-headed arrow.
+ </summary>
+ <param name="elementNumber1"></param>
+ <param name="elementNumber2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PDE(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a single-headed or double-headed arrow.
+ </summary>
+ <param name="variableName1"></param>
+ <param name="variableName2"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DragMouse(Amos.PDElement,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Drags the mouse from one point to another.
+ </summary>
+ <param name="theElement"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DragMouse(System.Double,System.Double,System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Drags the mouse from one point to another.
+ </summary>
+ <param name="x1"></param>
+ <param name="y1"></param>
+ <param name="x2"></param>
+ <param name="y2"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ClickMouse(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Clicks the mouse on a rectangle, ellipse, arrow or figure caption.
+ </summary>
+ <param name="elementNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ClickMouse(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Clicks the mouse on a rectangle or ellipse..
+ </summary>
+ <param name="variableName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ClickMouse(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Clicks the mouse on a rectangle, ellipse, arrow or figure caption.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DoubleClickMouse(Amos.PDElement)">
+ -----------------------------------------------------------------------------
+ <summary>
+ No longer supported.
+ </summary>
+ <param name="theElement"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ViewMatrixRepresentation">
+ -----------------------------------------------------------------------------
+ <summary>
+ The ViewMatrixRepresentation method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.IsViewingPathDiagram">
+ <summary>
+ Gets or sets a value that is True if the Path Diagram view is selected and False otherwise.
+ Set IsViewingPathDiagram=True to display the Path Diagram view.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Amos.pd.IsViewingTables">
+ <summary>
+ Gets or sets a value that is True if the Tables view is selected and False otherwise.
+ Set IsViewingTables=True to display the Tables view.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.ViewSpreadsheetOutput">
+ -----------------------------------------------------------------------------
+ <summary>
+ The ViewSpreadsheetOutput method has no effect. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ModelAdd(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Adds a new model.
+ </summary>
+ <param name="modelName"></param>
+ <param name="modelConstraints"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ModelDelete">
+ -----------------------------------------------------------------------------
+ <summary>
+ Deletes the model that is selected in the Amos Graphics window.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ModelRedefine(System.Int32,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Change the name and the definition of an existing model.
+ </summary>
+ <param name="modelNumber">The number of the model to change. Models are numbered starting with 1.</param>
+ <param name="modelName">New name for the model.</param>
+ <param name="modelConstraints">New constraints for the model. The existing constraints are replaced by the new constraints.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.NGroups">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of groups. Deprecated in Amos 6. Use GetNGroups instead.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.PDElements">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the collection of all rectangles, ellipses, arrows and figure captions in the path diagram for the currently displayed group.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.PageWidth">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the page width in inches.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.PageHeight">
+ -----------------------------------------------------------------------------
+ <summary>
+Gets the page height in inches.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.ProjectName">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of the file that contains the current path diagram, without the ".amw" extension.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.NotReady">
+ -----------------------------------------------------------------------------
+ <summary>
+ The NotReady property always returns False. It is provided for compatibility with earlier versions of Amos.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DoEvents">
+ <summary>
+ Updates the path diagram to reflect recent changes to the model.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Refresh">
+ -----------------------------------------------------------------------------
+ <summary>
+ Refreshes the Amos Graphics window.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.XYObject(System.Double,System.Double)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the object with coordinates (X, Y).
+ </summary>
+ <param name="x"></param>
+ <param name="y"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.UndoToHere">
+ -----------------------------------------------------------------------------
+ <summary>
+ Saves the state of the path diagram. A subsequent Undo restores this state.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.UndoResume">
+ -----------------------------------------------------------------------------
+ <summary>
+ Allows normal undo-ing of modifications to the path diagram.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GroupSelect(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects a group.
+ </summary>
+ <param name="groupName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/12/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GroupSelect(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects a group.
+ </summary>
+ <param name="groupNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/12/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ModelSelect(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects a model.
+ </summary>
+ <param name="modelName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/12/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ModelSelect(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Selects a model.
+ </summary>
+ <param name="modelNumber"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/12/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PropertyGet(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the value of a custom property.
+ </summary>
+ <param name="propertyName"></param>
+ <param name="defaultValue"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PropertySave(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Sets the value of a custom property.
+ </summary>
+ <param name="propertyName"></param>
+ <param name="value"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PropertyRemove(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Removes a custom property.
+ </summary>
+ <param name="propertyName"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.UserInteractionIsEnabled">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets whether user interaction is enabled.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.EnableUserInteraction2(System.Boolean,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Enable or disable the menus and toolbox buttons.
+ </summary>
+ <param name="TF">Enable if true, disable if false.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.pd.AmosDir">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Amos program directory.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.EnableUserInteraction(System.Boolean,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Enable or disable the menus and toolbox buttons.
+ </summary>
+ <param name="TF">Enable if true, disable if false.</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.SpecifyModel(AmosEngineLib.AmosEngine)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a model specification from Amos Graphics.
+ </summary>
+ <param name="sem"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DisplayInputPD">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the input path diagram. Equivalent to pressing the 'Input' button in the upper-left corner of the path diagram window.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.DisplayOutputPD">
+ -----------------------------------------------------------------------------
+ <summary>
+ Displays the output path diagram. Equivalent to pressing the 'Output' button in the upper-left corner of the path diagram window.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.BuildNumber">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the build number that is displayed in the About box.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.IsDirtyAmw">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that tells how much the model has changed since the last time it was saved as an AMW file.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.IsDirtyAmp">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that tells how much the model has changed since the last time it was fitted.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.AmwFileName">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the name of the AMW file associated with the model.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.InvalidateOutput">
+ -----------------------------------------------------------------------------
+ <summary>
+ Disables the toolbox buttons and menu items that are used for displaying results.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.HighlightArrows">
+ -----------------------------------------------------------------------------
+ <summary>
+ Makes the arrows in the path diagram change color when the mouse pointer approaches. Use this method to let the user click an arrow.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.HighlightNothing">
+ -----------------------------------------------------------------------------
+ <summary>
+ Prevents the objects in the path diagram from changing color when the mouse pointer approaches.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.PopAllButtons">
+ -----------------------------------------------------------------------------
+ <summary>
+ Pops all the buttons in the Amos Graphics toolbox.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetTextBox(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a TextBox control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetRadioButton(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a RadioButton control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetCheckBox(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a CheckBox control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetComboBox(System.String,System.String)">
+ <summary>
+ Gets a ComboBox control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.GetNumericUpDown(System.String,System.String)">
+ <summary>
+ Gets a NumericUpDown control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.GetButton(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a Button control in an Amos Graphics window.
+ </summary>
+ <param name="formName">The name of a Windows Forms form</param>
+ <param name="controlName">The name of a Windows Forms control</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.window">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the Amos Graphics main Window object.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetModels(System.String[]@,System.String[]@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets information about the models specified in Amos Graphics.
+ </summary>
+ <param name="sNames"></param>
+ <param name="sConstraints"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetNGroups">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the number of groups.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.GetDataFile(System.Int32,MiscAmosTypes.cDatabaseFormat@,System.String@,System.String@,System.String@,System.Object@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns information about the data file for a single group.
+ </summary>
+ <param name="groupNumber"></param>
+ <param name="dbFormat"></param>
+ <param name="fileName"></param>
+ <param name="tableName"></param>
+ <param name="groupingVariable"></param>
+ <param name="groupingValue"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.CanRespond(System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+ If Amos Graphics has an open modal dialog that may prevent it from responding correctly to calls to its methods and properties, the CanRespond method returns an explanatory string. Otherwise, it returns an empty string.
+ </summary>
+ <param name="callerDisplaysErrorMessage"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.SetDataFile(System.Int32,MiscAmosTypes.cDatabaseFormat,System.String,System.String,System.String,System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies the data file for a single group.
+ </summary>
+ <param name="groupNumber"></param>
+ <param name="dbFormat"></param>
+ <param name="fileName"></param>
+ <param name="tableName"></param>
+ <param name="groupingVariable"></param>
+ <param name="groupingValue"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.InterfacePropertiesApplyClick">
+ -----------------------------------------------------------------------------
+ <summary>
+ Has no effect.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ApplyAnalysisProperties(AmosEngineLib.AmosEngine)">
+ -----------------------------------------------------------------------------
+ <summary>
+ The ApplyAnalysisProperties method is deprecated in Amos 6. Use the CopyAnalysisPropertiesTo method instead.
+ </summary>
+ <param name="Sem"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.CopyAnalysisPropertiesTo(AmosEngineLib.AmosEngine)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Copies the properties in the Analysis Properties window to an AmosEngine instance.
+ </summary>
+ <param name="Sem"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/8/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.pd.ListOfObservedVariables">
+ <summary>
+ Get a list of the observed variables in the current group.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.ListOfUnobservedVariables">
+ <summary>
+ Get a list of the unobserved variables in the current group.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.String,System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanName should be the empty string.</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="width">The rectangle's width, measured in units of 1/96 inch.</param>
+ <param name="height">The rectangle's height, measured in units of 1/96 inch.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.String,System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="width">The ellipse's width, measured in units of 1/96 inch.</param>
+ <param name="height">The ellipse's height, measured in units of 1/96 inch.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.Double,System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable. This overload of the Observed method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="width">The rectangle's width, measured in units of 1/96 inch.</param>
+ <param name="height">The rectangle's height, measured in units of 1/96 inch.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.Double,System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable. This overload of the Unobserved method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="width">The ellipse's width, measured in units of 1/96 inch.</param>
+ <param name="height">The ellipse's height, measured in units of 1/96 inch.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="width">The rectangle's width, measured in units of 1/96 inch.</param>
+ <param name="height">The rectangle's height, measured in units of 1/96 inch.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="width">The ellipse's width, measured in units of 1/96 inch.</param>
+ <param name="height">The ellipse's height, measured in units of 1/96 inch.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable. This overload of the Observed method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="width">The rectangle's width, measured in units of 1/96 inch.</param>
+ <param name="height">The rectangle's height, measured in units of 1/96 inch.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable. This overload of the Unobserved method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="width">The ellipse's width, measured in units of 1/96 inch.</param>
+ <param name="height">The ellipse's height, measured in units of 1/96 inch.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the rectangle, measured in units of 1/96 inch.</param>
+ <param name="width">The rectangle's width, measured in units of 1/96 inch.</param>
+ <param name="height">The rectangle's height, measured in units of 1/96 inch.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.Double,System.Double,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="x">The distance from the left edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="y">The distance from the top edge of the path diagram to the center of the ellipse, measured in units of 1/96 inch.</param>
+ <param name="width">The ellipse's width, measured in units of 1/96 inch.</param>
+ <param name="height">The ellipse's height, measured in units of 1/96 inch.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.String,System.String)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.String,System.String)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.Double,System.String)">
+ <summary>
+ Draws a rectangle to represent an observed variable. This overload of the Observed method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.Double,System.String)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable. This overload of the Unobserved method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceName">A name for the variable's variance. varianceName should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.String,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.String,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptName">The name of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous). If means and intercepts are not explicit model parameters, meanOrInterceptName should be the empty string.</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String,System.Double,System.Double)">
+ <summary>
+ Draws a rectangle to represent an observed variable. This overload of the Observed method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Observed method only when creating an exogenous variable.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String,System.Double,System.Double)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable. This overload of the Unobserved method should be used only when means and intercepts are explicit model parameters.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <param name="meanOrInterceptValue">The value of the variable's mean (if the variable is exogenous) or intercept (if the variable is endogenous).</param>
+ <param name="varianceValue">The value of the variable's variance. varianceValue should be supplied as an argument to the Unobserved method only when creating an exogenous variable.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Observed(System.String)">
+ <summary>
+ Draws a rectangle to represent an observed variable.
+ </summary>
+ <param name="name">The name of the observed variable.</param>
+ <returns>A rectangle in the path diagram that represents an observed variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Unobserved(System.String)">
+ <summary>
+ Draws an ellipse to represent an unobserved variable.
+ </summary>
+ <param name="name">The name of the unobserved variable.</param>
+ <returns>An ellipse in the path diagram that represents an unobserved variable in the model.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(System.String,System.String,System.String)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariableName">The name of the variable that the new single-headed arrow points to.</param>
+ <param name="fromVariableName">The name of the variable that the new single-headed arrow points away from.</param>
+ <param name="regressionWeightName">A name for the regression weight represented by the new single-headed arrow.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(System.String,System.String,System.String)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variableName1">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variableName2">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="covarianceName">A name for the covariance represented by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(Amos.PDElement,Amos.PDElement,System.String)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariable">The variable that the new single-headed arrow points to.</param>
+ <param name="fromVariable">The variable that the new single-headed arrow points away from.</param>
+ <param name="regressionWeightName">A name for the regression weight represented by the new single-headed arrow.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(Amos.PDElement,Amos.PDElement,System.String)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variable1">One of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variable2">One of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="covarianceName">A name for the covariance represented by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(System.String,System.String,System.Double)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariableName">The name of the variable that the new single-headed arrow points to.</param>
+ <param name="fromVariableName">The name of the variable that the new single-headed arrow points away from.</param>
+ <param name="regressionWeightValue">The value of the regression weight represented by the new single-headed arrow.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(System.String,System.String,System.Double)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variableName1">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variableName2">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="covarianceValue">The value of the covariance represented by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(Amos.PDElement,Amos.PDElement,System.Double)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariable">The variable that the new single-headed arrow points to.</param>
+ <param name="fromVariable">The variable that the new single-headed arrow points away from.</param>
+ <param name="regressionWeightValue">The value of the regression weight represented by the new single-headed arrow.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(Amos.PDElement,Amos.PDElement,System.Double)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variable1">One of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variable2">One of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="covarianceValue">The value of the covariance represented by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(System.String,System.String)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariableName">The name of the variable that the new single-headed arrow points to.</param>
+ <param name="fromVariableName">The name of the variable that the new single-headed arrow points away from.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(System.String,System.String)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variableName1">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variableName2">The name of one of the two variables to be connected by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Path(Amos.PDElement,Amos.PDElement)">
+ <summary>
+ Draws a single-headed arrow.
+ </summary>
+ <param name="toVariable">The variable that the new single-headed arrow points to.</param>
+ <param name="fromVariable">The variable that the new single-headed arrow points away from.</param>
+ <returns>The new single-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Cov(Amos.PDElement,Amos.PDElement)">
+ <summary>
+ Draws a double-headed arrow.
+ </summary>
+ <param name="variable1">One of the two variables to be connected by the new double-headed arrow.</param>
+ <param name="variable2">One of the two variables to be connected by the new double-headed arrow.</param>
+ <returns>The new double-headed arrow.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Caption(System.String,System.Double,System.Double,Amos.PDElement.TitlePositionEnum)">
+ <summary>
+ Creates a figure caption.
+ </summary>
+ <param name="theCaption"></param>
+ <param name="x">The horizontal position of the caption measured in units of 1/96 inch. (The horizontal position is also affected by the position argument.)</param>
+ <param name="y">The vertical distance from the top edge of the path diagram to the center of the figure caption, measured in units of 1/96 inch.</param>
+ <param name="position">An enumeration that specifies one of the following ways of formatting the new figure caption: (0) Centered at the caption's x coordinate, (1) Left Justified at the caption's x coordinate, (2) Right justified at the caption's x coordinate, (3) Centered horizontally on the path diagram.</param>
+ <returns>The newly created figure caption.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Amos.pd.Caption(System.String)">
+ <summary>
+ Creates a figure caption.
+ </summary>
+ <param name="theCaption"></param>
+ <returns>The newly created figure caption.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:Amos.PDElement">
+ -----------------------------------------------------------------------------
+ <summary>
+ A rectangle, ellipse, arrow or figure caption.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:Amos.PDElement.PDFormatType">
+ -----------------------------------------------------------------------------
+ <summary>
+ Specifies a class of parameters whose values are formatted in the same way.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.o_type">
+ -----------------------------------------------------------------------------
+ <summary>
+ The type of an object in a path diagram.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.InvisiblePicture">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that is True for a rectangle, ellipse or arrow that is invisible.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.InvisibleName">
+ -----------------------------------------------------------------------------
+ <summary>
+ Regs or sets a value that is True for a variable whose name is invisible.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.InvisibleParametersField">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that is True for a rectangle, ellipse or arrow whose parameters are invisible.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Estimate1">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter estimate -- either a regression weight, a covariance or a variance.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Estimate2">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a parameter estimate -- either a mean or an intercept.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Value_Allgroups">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is true if there is a check mark next to "All groups" in the Object Properties dialog.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameFontBold">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that specifies whether a variable name or figure caption is displayed in a bold font.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameFontItalic">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that specifiess whether a variable name or figure caption is displayed in an italic font.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterFontBold">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that specifies whether a variable's parameter constraints and parameter estimates are displayed in a bold font.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterFontItalic">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that specifies whether a variable's parameter constraints and parameter estimates are displayed in an italic font.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterOrientation">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that specifies the orientation of parameter constraints and estimates.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.PenWidth">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the width of lines used to draw rectangles, ellipses and arrows.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.FillColor">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of the interior of rectangles and ellipses.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.FillColor2">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of the interior of rectangles and ellipses.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.BorderColor">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of lines used to draw arrows and to draw the outlines of rectangles and ellipses.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.BorderColor2">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of lines used to draw arrows and to draw the outlines of rectangles and ellipses.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameColor">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of variable names and figure captions.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterColor">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the color of parameter constraints and parameter estimates.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.UnusedTransparency">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that determines whether a rectangle or ellipse is to be transparent or is to be filled with the solid color specified by the FillColor property.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Obj1">
+ -----------------------------------------------------------------------------
+ <summary>
+ A positive integer. For a single-headed arrow, obj1 is the object the arrow points away from. For a double-headed arrow, obj1 is one of the objects pointed to.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Obj2">
+ -----------------------------------------------------------------------------
+ <summary>
+ A positive integer. For a single-headed arrow, obj2 is the object the arrow points to. For a double-headed arrow, obj2 is one of the objects pointed to.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Incoming">
+ -----------------------------------------------------------------------------
+ <summary>
+ 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.Outgoing">
+ -----------------------------------------------------------------------------
+ <summary>
+ 
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameOrCaption">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a figure caption or a variable name.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.LongLabel">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a character string used (instead of a variable's name) to label a rectangle or ellipse.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Value1">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a parameter name or fixed parameter value for a regression weight, covariance or variance.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Value2">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a parameter name or fixed parameter value for a mean or intercept.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:Amos.PDElement.AlternateParameterFormats">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the parameter formats for this object. These formats override those specified in the View Interface Properties dialog.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.originX">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the x coordinate of the center of a rectangle or ellipse.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.originY">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the y coordinate of the center of a rectangle or ellipse.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.termX">
+ -----------------------------------------------------------------------------
+ <summary>
+ For rectangles, gets or sets the x coordinate of the lower right corner. For ellipses, gets or sets the x coordinate of the lower right corner of the bounding rectangle.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.termY">
+ -----------------------------------------------------------------------------
+ <summary>
+ For rectangles, gets or sets the y coordinate of the lower right corner. For ellipses, gets or sets the y coordinate of the lower right corner of the bounding rectangle.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for rectangles and ellipses (i.e., for variables).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsEndogenousVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for endogenous variables.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsExogenousVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for exogenous variables.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsLatentVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for latent variables.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsUniqueVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for unique variables -- i.e., for variables that are unobserved and exogenous, and that affect only one other variable.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsObservedVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for observed variables.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsUnobservedVariable">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for ellipses (unobserved variables).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsPath">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for single-headed arrows (regression weights).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsCovariance">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for double-headed arrows (covariances).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.IsCaption">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a value that is True for figure captions.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterPosition">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the position of an object's parameter(s).
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameFontSize">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the font size used to display a variable name or figure caption.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterFontSize">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the font size used to display a variable's parameter constraints and parameter estimates.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Height">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the height of a rectangle, ellipse or title in logical pixel units. Returns zero for an arrow.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Width">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the width of a rectangle, ellipse or title in logical pixel units. Returns zero for an arrow.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.GetLeft">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns the left boundary of a path diagram object.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	12/17/2008	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.GetTop">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns the top boundary of a path diagram object.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	12/17/2008	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.GetRight">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns the right boundary of a path diagram object.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	12/17/2008	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.GetBottom">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns the bottom boundary of a path diagram object.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	12/17/2008	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.IsHighlighted">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that is True for the object that is highlighted and False for other objects. (By default, the "highlighted" object is colored red.)
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.IsSelected">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets a value that is True for a path diagram element that is "selected". Typically, path diagram elements are selected by using using the EditSelect method or the EditSelectAll method.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/7/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameWidth">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the width of a variable name or figure caption.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.NameHeight">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the height of a variable name or figure caption.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Variable1">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a rectangle or an ellipse (an object of type PDElement.) For a single-headed arrow, Variable1 is the object that the arrow points away from. For a double-headed arrow, Variable1 is one of the objects that the arrow points to.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.Variable2">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets a rectangle or an ellipse (an object of type PDElement.) For a single-headed arrow, Variable2 is the object that the arrow points to. For a double-headed arrow, Variable2 is one of the objects that the arrow points to.
+ </summary>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Amos.PDElement.ParameterFormat(System.String,Amos.PDElement.PDFormatType)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets or sets the parameter formats for this object. These formats override those specified with in the View Interface Properties dialog.
+ </summary>
+ <param name="formatName"></param>
+ <param name="formatType"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.PropertyGet(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Retrieves the value of a property that was previously saved using the PropertySave method.
+ </summary>
+ <param name="key"></param>
+ <param name="Default_Renamed"></param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.PropertySave(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Saves a string that can later be retrieved by name using the PropertyGet method.
+ </summary>
+ <param name="key"></param>
+ <param name="value"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:Amos.PDElement.PropertyRemove(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Removes a property associated with a path diagram or with an element of a path diagram.
+ </summary>
+ <param name="key"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[jim]	7/9/2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:Amos.wpf_Mform">
+<summary>
+wpf_Mform
+</summary>
+</member>
+<member name="M:Amos.wpf_Mform.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:Amos.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Amos.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Amos.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Amos.ExtendedMessage">
+<summary>
+ExtendedMessage
+</summary>
+</member>
+<member name="M:Amos.ExtendedMessage.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:Amos.WindowDocViewer">
+<summary>
+WindowDocViewer
+</summary>
+</member>
+<member name="M:Amos.WindowDocViewer.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:Amos.WindowPDBrowser">
+<summary>
+WindowPDBrowser
+</summary>
+</member>
+<member name="M:Amos.WindowPDBrowser.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>
