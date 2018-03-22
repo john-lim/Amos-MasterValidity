@@ -1,0 +1,5 @@
+C:\Users\johnh\AppData\Local\AmosDevelopment\Amos\25\Plugins\Amos-MasterValidity.dll
+C:\Users\johnh\AppData\Local\AmosDevelopment\Amos\25\Plugins\Amos-MasterValidity.pdb
+C:\Users\johnh\Amos\Amos-MasterValidity\Amos-MasterValidity\Amos-MasterValidity\obj\Debug\Amos-MasterValidity.vbprojResolveAssemblyReference.cache
+C:\Users\johnh\Amos\Amos-MasterValidity\Amos-MasterValidity\Amos-MasterValidity\obj\Debug\Amos-MasterValidity.dll
+C:\Users\johnh\Amos\Amos-MasterValidity\Amos-MasterValidity\Amos-MasterValidity\obj\Debug\Amos-MasterValidity.pdb

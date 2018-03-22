@@ -1,4 +1,0 @@
-C:\Users\johnh\AppData\Local\AmosDevelopment\Amos\25\Plugins\MasterValidity25.dll
-C:\Users\johnh\AppData\Local\AmosDevelopment\Amos\25\Plugins\MasterValidity25.pdb
-C:\Users\johnh\Google Drive\John Lim James Gaskin RA\AMOS\AMOS-25\25-Projects\MasterValidity25\MasterValidity25\obj\Debug\MasterValidity25.dll
-C:\Users\johnh\Google Drive\John Lim James Gaskin RA\AMOS\AMOS-25\25-Projects\MasterValidity25\MasterValidity25\obj\Debug\MasterValidity25.pdb

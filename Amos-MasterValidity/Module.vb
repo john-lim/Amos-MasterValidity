@@ -21,19 +21,23 @@ Public Class CustomCode
         Return "Calculates CR, AVE, ASV, MSV and outputs them in a table with the correlations. Includes interpretations from the results. See statwiki.kolobkreations.com for more information."
     End Function
 
+    'Struct to hold the estimates for a latent variable that you are testing.
     Structure Estimates
-        'An estimates struct holds the estimates for a latent variable that you are testing.
+
         Public CR As Double
         Public AVE As Double
         Public MSV As Double
         Public MaxR As Double
         Public SQRT As Double
+
     End Structure
 
     Public Function Mainsub() As Integer Implements IPlugin.MainSub
 
+        'Check if the model is a causal rather than measurment model by looping through paths.
         For Each variable As PDElement In pd.PDElements
             If variable.IsPath Then
+                'Model contains paths from latent to latent or observed to observed.
                 If (variable.Variable1.IsLatentVariable And variable.Variable2.IsLatentVariable) Or (variable.Variable1.IsObservedVariable And variable.Variable2.IsObservedVariable) Or (variable.Variable1.IsObservedVariable And variable.Variable2.IsLatentVariable) Then
                     MsgBox("The master validity plugin cannot be used for causal models.")
                     Exit Function
@@ -51,205 +55,12 @@ Public Class CustomCode
         Dim estimateMatrix As Double(,) = GetMatrix()
 
         'Sub procedure to create the output file.
-        CreateHTML(estimateMatrix)
+        CreateOutput(estimateMatrix)
 
     End Function
 
-    Function GetXML(path As String) As XmlElement
-
-        'Gets the xpath expression for an output table.
-        Dim doc As Xml.XmlDocument = New Xml.XmlDocument()
-        doc.Load(Amos.pd.ProjectName & ".AmosOutput")
-        Dim nsmgr As XmlNamespaceManager = New XmlNamespaceManager(doc.NameTable)
-        Dim eRoot As Xml.XmlElement = doc.DocumentElement
-
-        Return eRoot.SelectSingleNode(path, nsmgr)
-
-    End Function
-
-    Function GetLatent() As ArrayList
-
-        Dim latentVariables As New ArrayList
-
-        'Loops through variables in the model and stores the latent variable names in an array.
-        For Each variable As PDElement In pd.PDElements
-            If variable.IsLatentVariable And Not variable.IsEndogenousVariable Then
-                latentVariables.Add(variable.NameOrCaption)
-            End If
-        Next
-
-        Return latentVariables
-
-    End Function
-
-    Function GetEstimates(latent As String) As Estimates
-
-        'Store the standardized regression output table into a matrix.
-        Dim tableRegression As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Standardized Regression Weights:']/table/tbody")
-        'Count of elements in the regression table.
-        Dim numRegression As Integer = GetNodeCount(tableRegression)
-
-        Dim estimates As Estimates
-        Dim MaxR As Double = 0 'Sum of squared SRW over one minus SRW squared
-        Dim SRW As Double = 0 'Standardized Regression Weight
-        Dim SSI As Double = 0 'Sum of the square SRW values for a variable
-        Dim SL2 As Double = 0 'Squared SRW value
-        Dim SL3 As Double = 0 'Sum of the SRW values for a variable
-        Dim SRWError As Double = 0 'Sum of SRW errors
-        Dim numSRW As Double = 0 'Count of SRW values
-
-        'Loop through regression matrix to calculate estimates.
-        For i = 1 To numRegression
-            If latent = MatrixName(tableRegression, i, 2) Then
-                SRW = MatrixElement(tableRegression, i, 3)
-                SL2 = Math.Pow(SRW, 2)
-                SL3 = SL3 + SRW
-                SSI = SSI + SL2
-                SRWError = SRWError + (1 - SL2)
-                MaxR = MaxR + (SL2 / (1 - SL2))
-                numSRW += 1
-            End If
-        Next
-
-        'Output estimates to struct.
-        SL3 = Math.Pow(SL3, 2)
-        estimates.CR = SL3 / (SL3 + SRWError)
-        estimates.AVE = SSI / numSRW
-        estimates.MSV = GetMSV(latent)
-        estimates.MaxR = 1 / (1 + (1 / MaxR))
-        estimates.SQRT = Math.Sqrt(SSI / numSRW)
-
-        Return estimates
-
-    End Function
-
-    Function GetMSV(latent As String) As Double
-
-        'Store correlation table in a matrix
-        Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
-        'Count of elements in correlation table
-        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
-
-        'Variables
-        Dim MSV As Double = 0
-        Dim testMSV As Double = 0
-
-        'Takes the max correlation as the MSV
-        For i = 1 To numCorrelation
-            If latent = MatrixName(tableCorrelation, i, 0) Or latent = MatrixName(tableCorrelation, i, 2) Then
-                testMSV = Math.Pow(MatrixElement(tableCorrelation, i, 3), 2)
-                If testMSV > MSV Then
-                    MSV = testMSV
-                End If
-            End If
-        Next
-
-        Return MSV
-
-    End Function
-
-    Function GetNodeCount(table As XmlElement) As Integer
-
-        Dim nodeCount As Integer = 0
-
-        'Handles a model with zero correlations
-        Try
-            nodeCount = table.ChildNodes.Count
-        Catch ex As NullReferenceException
-            nodeCount = 0
-        End Try
-
-        Return nodeCount
-
-    End Function
-
-    Function GetMatrix() As Double(,)
-
-        'Holds the correlation matrix from the output table.
-        Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
-        'Count of elements in the correlation table
-        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
-
-        'Get an array with the names of the latent variables.
-        Dim latentVariables As ArrayList = GetLatent()
-        'Declare a two dimensional array to hole the estimates.
-        Dim estimateMatrix((latentVariables.Count - 1), (latentVariables.Count + 3)) As Double
-
-        'Catch if there is only one latent in the model.
-        CheckSingleLatent(latentVariables.Count)
-
-        For Each latent In latentVariables
-
-            Dim estimates As Estimates = GetEstimates(latent)
-            Dim matrixColumn As Integer = 1
-            Dim matrixRow As Integer = latentVariables.IndexOf(latent)
-
-            'First four rows are estimates
-            estimateMatrix(matrixRow, 0) = estimates.CR
-            estimateMatrix(matrixRow, matrixColumn) = estimates.AVE
-            matrixColumn += 1
-            If numCorrelation >= 1 Then
-                estimateMatrix(matrixRow, matrixColumn) = estimates.MSV
-                matrixColumn += 1
-            End If
-            estimateMatrix(matrixRow, matrixColumn) = estimates.MaxR
-
-            'Get the Correlation table and put it into an aligned matrix.
-            If numCorrelation <> 0 Then
-                For i = 1 To numCorrelation
-                    If latent = MatrixName(tableCorrelation, i, 2) Then
-                        For index = 0 To latentVariables.Count - 1
-                            If latentVariables(index) = MatrixName(tableCorrelation, i, 0) Then
-                                'Catches an output table exception where the variable is only listed on one side.
-                                If (index + 4) > latentVariables.IndexOf(latent) + 4 And MatrixElement(tableCorrelation, i, 3) > 0 Then
-                                    estimateMatrix(index, matrixRow + 4) = MatrixElement(tableCorrelation, i, 3)
-                                Else
-                                    estimateMatrix(matrixRow, index + 4) = MatrixElement(tableCorrelation, i, 3)
-                                End If
-                            End If
-                        Next
-                        If latent = latentVariables(matrixRow) Then
-                            estimateMatrix(matrixRow, matrixRow + 4) = estimates.SQRT
-                        End If
-                    ElseIf latent = latentVariables(matrixRow) Then
-                        estimateMatrix(matrixRow, matrixRow + 4) = estimates.SQRT
-                    End If
-                Next
-            End If
-
-        Next
-
-        Return estimateMatrix
-
-    End Function
-
-    Sub CheckSingleLatent(iLatent As Integer)
-
-        'Assign the variance estimates to a matrix
-        Dim tableVariance As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Variances:']/table/tbody")
-
-        'Loop through variance table with the number of latents
-        For i = 1 To iLatent + 1
-            Try
-                MatrixName(tableVariance, i, 3) 'Checks if there is no variance for an unobserved variable.
-            Catch ex As Exception
-                For k = 1 To iLatent + 1
-                    Try
-                        If Not MatrixName(tableVariance, k, 3) = Nothing Then 'Checks if the variable is "unidentified"
-                            MsgBox(MatrixName(tableVariance, k, 0) + " is causing an error. Either:
-                            1. It only has one indicator and is therefore, not latent. The CFA is only for latent variables, so don’t include " + MatrixName(tableVariance, k, 0) + " in the CFA.
-                            2. You are missing a constraint on an indicator.")
-                        End If
-                    Catch exc As NullReferenceException
-                        Continue For
-                    End Try
-                Next
-            End Try
-        Next
-
-    End Sub
-
-    Sub CreateHTML(estimateMatrix As Double(,))
+    'Use the estimates matrix to create an html file of output.
+    Sub CreateOutput(estimateMatrix As Double(,))
 
         'Get the output tables and the count of correlations
         Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
@@ -409,19 +220,23 @@ Public Class CustomCode
         resultWriter.Dispose()
         Process.Start("MasterValidity.html")
 
-
     End Sub
 
+    'Creates an arraylist of recommendations to improve the model.
     Function checkValidity(estimateMatrix As Double(,)) As ArrayList
-        Dim validityMessages As New ArrayList
-        Dim tempMessage As String = ""
-        Dim latentVariables As ArrayList = GetLatent()
+
+        Dim validityMessages As New ArrayList 'The list of messages.
+        Dim latentVariables As ArrayList = GetLatent() 'The list of latent variables
+        'Xml tables used to check estimates and number of rows.
         Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
-        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
         Dim tableRegression As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Standardized Regression Weights:']/table/tbody")
+        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
         Dim numRegression As Integer = GetNodeCount(tableRegression)
-        Dim numIndicator As Integer = 0
-        Dim bMalhotra As Boolean = True
+
+        'Variables
+        Dim numIndicator As Integer = 0 'Temp variable to check if more than two indicators on a latent.
+        Dim bMalhotra As Boolean = True 'Malhotra is only used for certain conditions
+        Dim tempMessage As String = "" 'Temp variable to check if the message already exists.
         Dim sMalhotra As String = ""
 
         'Based only on the variables in the correlations table
@@ -436,11 +251,11 @@ Public Class CustomCode
                 End If
             Next
 
-            If numIndicator > 2 Then
+            If numIndicator > 2 Then 'Check if latent is connected to at least two indicators.
                 For i = 1 To numRegression
                     If latentVariables(y) = MatrixName(tableRegression, i, 2) Then
                         indicatorTest = MatrixElement(tableRegression, i, 3)
-                        If indicatorTest < indicatorVal Then
+                        If indicatorTest < indicatorVal Then 'Look for the lowest indicator.
                             indicatorName = MatrixName(tableRegression, i, 0)
                             indicatorVal = indicatorTest
                         End If
@@ -513,24 +328,244 @@ Public Class CustomCode
                         End If
                     End If
                 Next
-
             Next
         Next
 
         Return validityMessages
+
     End Function
 
+    'Get the CR, AVE, MSV, MaxR, and Sqrt for a latent variable.
+    Function GetEstimates(latent As String) As Estimates
+
+        'Store the standardized regression output table into a matrix.
+        Dim tableRegression As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Standardized Regression Weights:']/table/tbody")
+        'Count of elements in the regression table.
+        Dim numRegression As Integer = GetNodeCount(tableRegression)
+
+        Dim estimates As Estimates
+        Dim MaxR As Double = 0 'Sum of squared SRW over one minus SRW squared
+        Dim SRW As Double = 0 'Standardized Regression Weight
+        Dim SSI As Double = 0 'Sum of the square SRW values for a variable
+        Dim SL2 As Double = 0 'Squared SRW value
+        Dim SL3 As Double = 0 'Sum of the SRW values for a variable
+        Dim SRWError As Double = 0 'Sum of SRW errors
+        Dim numSRW As Double = 0 'Count of SRW values
+
+        'Loop through regression matrix to calculate estimates.
+        For i = 1 To numRegression
+            If latent = MatrixName(tableRegression, i, 2) Then
+                SRW = MatrixElement(tableRegression, i, 3)
+                SL2 = Math.Pow(SRW, 2)
+                SL3 = SL3 + SRW
+                SSI = SSI + SL2
+                SRWError = SRWError + (1 - SL2)
+                MaxR = MaxR + (SL2 / (1 - SL2))
+                numSRW += 1
+            End If
+        Next
+
+        'Output estimates to struct.
+        SL3 = Math.Pow(SL3, 2)
+        estimates.CR = SL3 / (SL3 + SRWError)
+        estimates.AVE = SSI / numSRW
+        estimates.MSV = GetMSV(latent)
+        estimates.MaxR = 1 / (1 + (1 / MaxR))
+        estimates.SQRT = Math.Sqrt(SSI / numSRW)
+
+        Return estimates
+
+    End Function
+
+    'Matrix that holds the estimates for each latent variable.
+    Function GetMatrix() As Double(,)
+
+        'Holds the correlation matrix from the output table.
+        Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
+        'Count of elements in the correlation table
+        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
+
+        'Get an array with the names of the latent variables.
+        Dim latentVariables As ArrayList = GetLatent()
+        'Declare a two dimensional array to hole the estimates.
+        Dim estimateMatrix((latentVariables.Count - 1), (latentVariables.Count + 3)) As Double
+
+        'Catch if there is only one latent in the model.
+        CheckSingleLatent(latentVariables.Count)
+
+        For Each latent In latentVariables
+
+            Dim estimates As Estimates = GetEstimates(latent)
+            Dim matrixColumn As Integer = 1
+            Dim matrixRow As Integer = latentVariables.IndexOf(latent)
+
+            'First four rows are estimates
+            estimateMatrix(matrixRow, 0) = estimates.CR
+            estimateMatrix(matrixRow, matrixColumn) = estimates.AVE
+            matrixColumn += 1
+            If numCorrelation >= 1 Then
+                estimateMatrix(matrixRow, matrixColumn) = estimates.MSV
+                matrixColumn += 1
+            End If
+            estimateMatrix(matrixRow, matrixColumn) = estimates.MaxR
+
+            'Get the Correlation table and put it into an aligned matrix.
+            If numCorrelation <> 0 Then
+                For i = 1 To numCorrelation
+                    If latent = MatrixName(tableCorrelation, i, 2) Then
+                        For index = 0 To latentVariables.Count - 1
+                            If latentVariables(index) = MatrixName(tableCorrelation, i, 0) Then
+                                'Catches an output table exception where the variable is only listed on one side.
+                                If (index + 4) > latentVariables.IndexOf(latent) + 4 And MatrixElement(tableCorrelation, i, 3) > 0 Then
+                                    estimateMatrix(index, matrixRow + 4) = MatrixElement(tableCorrelation, i, 3)
+                                Else
+                                    estimateMatrix(matrixRow, index + 4) = MatrixElement(tableCorrelation, i, 3)
+                                End If
+                            End If
+                        Next
+                        If latent = latentVariables(matrixRow) Then
+                            estimateMatrix(matrixRow, matrixRow + 4) = estimates.SQRT
+                        End If
+                    ElseIf latent = latentVariables(matrixRow) Then
+                        estimateMatrix(matrixRow, matrixRow + 4) = estimates.SQRT
+                    End If
+                Next
+            End If
+
+        Next
+
+        Return estimateMatrix
+
+    End Function
+
+#Region "Helper Functions"
+
+    'Check if the model has a single latent factor.
+    Sub CheckSingleLatent(iLatent As Integer)
+
+        'Assign the variance estimates to a matrix
+        Dim tableVariance As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Variances:']/table/tbody")
+
+        'Loop through variance table with the number of latents
+        For i = 1 To iLatent + 1
+            Try
+                MatrixName(tableVariance, i, 3) 'Checks if there is no variance for an unobserved variable.
+            Catch ex As Exception
+                For k = 1 To iLatent + 1
+                    Try
+                        If Not MatrixName(tableVariance, k, 3) = Nothing Then 'Checks if the variable is "unidentified"
+                            MsgBox(MatrixName(tableVariance, k, 0) + " is causing an error. Either:
+                            1. It only has one indicator and is therefore, not latent. The CFA is only for latent variables, so don’t include " + MatrixName(tableVariance, k, 0) + " in the CFA.
+                            2. You are missing a constraint on an indicator.")
+                        End If
+                    Catch exc As NullReferenceException
+                        Continue For
+                    End Try
+                Next
+            End Try
+        Next
+
+    End Sub
+
+    'Create an arraylist of the names of the latent variables.
+    Function GetLatent() As ArrayList
+
+        Dim latentVariables As New ArrayList
+
+        'Loops through variables in the model and stores the latent variable names in an array.
+        For Each variable As PDElement In pd.PDElements
+            If variable.IsLatentVariable And Not variable.IsEndogenousVariable Then
+                latentVariables.Add(variable.NameOrCaption)
+            End If
+        Next
+
+        Return latentVariables
+
+    End Function
+
+    'Calculate the MSV for a correlation.
+    Function GetMSV(latent As String) As Double
+
+        'Store correlation table in a matrix
+        Dim tableCorrelation As XmlElement = GetXML("body/div/div[@ntype='models']/div[@ntype='model'][position() = 1]/div[@ntype='group'][position() = 1]/div[@ntype='estimates']/div[@ntype='scalars']/div[@nodecaption='Correlations:']/table/tbody")
+        'Count of elements in correlation table
+        Dim numCorrelation As Integer = GetNodeCount(tableCorrelation)
+
+        'Variables
+        Dim MSV As Double = 0
+        Dim testMSV As Double = 0
+
+        'Takes the max correlation as the MSV
+        For i = 1 To numCorrelation
+            If latent = MatrixName(tableCorrelation, i, 0) Or latent = MatrixName(tableCorrelation, i, 2) Then
+                testMSV = Math.Pow(MatrixElement(tableCorrelation, i, 3), 2)
+                If testMSV > MSV Then
+                    MSV = testMSV
+                End If
+            End If
+        Next
+
+        Return MSV
+
+    End Function
+
+    'Get the number of rows in an xml table.
+    Function GetNodeCount(table As XmlElement) As Integer
+
+        Dim nodeCount As Integer = 0
+
+        'Handles a model with zero correlations
+        Try
+            nodeCount = table.ChildNodes.Count
+        Catch ex As NullReferenceException
+            nodeCount = 0
+        End Try
+
+        Return nodeCount
+
+    End Function
+
+    'Use an output table path to get the xml version of the table.
+    Function GetXML(path As String) As XmlElement
+
+        'Gets the xpath expression for an output table.
+        Dim doc As Xml.XmlDocument = New Xml.XmlDocument()
+        doc.Load(Amos.pd.ProjectName & ".AmosOutput")
+        Dim nsmgr As XmlNamespaceManager = New XmlNamespaceManager(doc.NameTable)
+        Dim eRoot As Xml.XmlElement = doc.DocumentElement
+
+        Return eRoot.SelectSingleNode(path, nsmgr)
+
+    End Function
+
+    'Get a string element from an xml table.
     Function MatrixName(eTableBody As XmlElement, row As Long, column As Long) As String
+
         Dim e As XmlElement
-        'The row is offset one.
-        e = eTableBody.ChildNodes(row - 1).ChildNodes(column)
-        MatrixName = e.InnerText
+
+        Try
+            e = eTableBody.ChildNodes(row - 1).ChildNodes(column) 'This means that the rows are not 0 based.
+            MatrixName = e.InnerText
+        Catch ex As Exception
+            MatrixName = ""
+        End Try
+
     End Function
 
+    'Get a number from an xml table
     Function MatrixElement(eTableBody As XmlElement, row As Long, column As Long) As Double
+
         Dim e As XmlElement
-        e = eTableBody.ChildNodes(row - 1).ChildNodes(column)
-        MatrixElement = CDbl(e.GetAttribute("x"))
+
+        Try
+            e = eTableBody.ChildNodes(row - 1).ChildNodes(column) 'This means that the rows are not 0 based.
+            MatrixElement = CDbl(e.GetAttribute("x"))
+        Catch ex As Exception
+            MatrixElement = 0
+        End Try
+
     End Function
+
+#End Region
 
 End Class

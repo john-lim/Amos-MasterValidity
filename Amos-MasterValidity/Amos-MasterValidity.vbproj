@@ -8,7 +8,7 @@
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3968AAF4-0116-4821-8B1B-CF50E31613B0}</ProjectGuid>
+    <ProjectGuid>{23548807-4297-4FAD-84ED-36C77DFA86D4}</ProjectGuid>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -33,8 +33,8 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
     <OptionStrict>Off</OptionStrict>
-    <RootNamespace>MasterValidity25</RootNamespace>
-    <StartupObject>MasterValidity25.%28None%29</StartupObject>
+    <RootNamespace>Amos_MasterValidity</RootNamespace>
+    <StartupObject>Amos_MasterValidity.%28None%29</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <MyType>Windows</MyType>
@@ -200,7 +200,7 @@
     <Compile Include="AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Module1.vb">
+    <Compile Include="Module.vb">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
