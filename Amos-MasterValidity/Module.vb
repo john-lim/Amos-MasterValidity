@@ -38,9 +38,19 @@ Public Class CustomCode
         For Each variable As PDElement In pd.PDElements
             If variable.IsPath Then
                 'Model contains paths from latent to latent or observed to observed.
-                If (variable.Variable1.IsLatentVariable And variable.Variable2.IsLatentVariable) Or (variable.Variable1.IsObservedVariable And variable.Variable2.IsObservedVariable) Or (variable.Variable1.IsObservedVariable And variable.Variable2.IsLatentVariable) Then
+                If (variable.Variable1.IsObservedVariable And variable.Variable2.IsObservedVariable) Or (variable.Variable1.IsObservedVariable And variable.Variable2.IsLatentVariable) Then
                     MsgBox("The master validity plugin cannot be used for causal models.")
                     Exit Function
+                End If
+                If variable.Variable1.IsLatentVariable And variable.Variable2.IsLatentVariable Then
+                    For Each subvariable As PDElement In pd.PDElements
+                        If subvariable.IsPath Then
+                            If (variable.Variable1.NameOrCaption = subvariable.Variable1.NameOrCaption) And subvariable.Variable2.IsObservedVariable Then
+                                MsgBox("The master validity plugin cannot be used for causal models.")
+                                Exit Function
+                            End If
+                        End If
+                    Next
                 End If
             End If
         Next
